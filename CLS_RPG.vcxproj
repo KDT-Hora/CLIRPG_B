@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="CLS_RPG.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\test.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
