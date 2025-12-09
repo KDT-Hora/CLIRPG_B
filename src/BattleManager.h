@@ -3,4 +3,5 @@
 class BattleManager {
 public:
 	void Update();
+
 };

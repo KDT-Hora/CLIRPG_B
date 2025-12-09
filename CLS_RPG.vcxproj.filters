@@ -1,34 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="ソース ファイル">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="ソース ファイル\Main">
-      <UniqueIdentifier>{e85ba4c4-ad92-43ca-9be1-d6f1506352c2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\System">
-      <UniqueIdentifier>{48a7b39e-639b-4aa8-aa52-eed34b5dc01c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\System\window">
-      <UniqueIdentifier>{d6e03118-1fe8-499d-8d2f-2bb9878a5e37}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Game">
-      <UniqueIdentifier>{5b3bd98d-d895-4b78-a25c-e9205a9f7d47}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Window.cpp">
-      <Filter>ソース ファイル\System\window</Filter>
+    <ClCompile Include="src\GameManager.cpp">
+      <Filter>ソースファイル\Game</Filter>
     </ClCompile>
-    <ClCompile Include="CLS_RPG.cpp">
-      <Filter>ソース ファイル\Main</Filter>
+    <ClCompile Include="src\Window.cpp">
+      <Filter>ソースファイル\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CLS_RPG.cpp">
+      <Filter>ソースファイル\System</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BattleManager.cpp">
+      <Filter>ソースファイル\Game\Battle\BattleManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BattleView.cpp">
+      <Filter>ソースファイル\Game\Battle\BattleManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CharacterBase.cpp">
+      <Filter>ソースファイル\Game\Battle\Character\Base</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Window.h">
-      <Filter>ソース ファイル\System\window</Filter>
+    <ClInclude Include="src\GameManager.h">
+      <Filter>ソースファイル\Game</Filter>
     </ClInclude>
+    <ClInclude Include="src\Window.h">
+      <Filter>ソースファイル\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BattleEnemyController.h">
+      <Filter>ソースファイル\Game\Battle\Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BattleEnemyView.h">
+      <Filter>ソースファイル\Game\Battle\Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BattleUnitController.h">
+      <Filter>ソースファイル\Game\Battle\Character\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BattleUnitView.h">
+      <Filter>ソースファイル\Game\Battle\Character\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CharacterState.h">
+      <Filter>ソースファイル\Game\Battle\Character\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BattleManager.h">
+      <Filter>ソースファイル\Game\Battle\BattleManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BattleView.h">
+      <Filter>ソースファイル\Game\Battle\BattleManager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="ソースファイル">
+      <UniqueIdentifier>{fedafebd-c21e-4511-b5ae-40911b94e1c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Game">
+      <UniqueIdentifier>{ae3623b1-1aea-4ed8-bec7-9c44c43b8a64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Window">
+      <UniqueIdentifier>{0d3daf17-78e1-49f6-b934-564a25235be8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\System">
+      <UniqueIdentifier>{e1340a1e-9ec3-44fd-a4d3-ddbcaa1095fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Game\Battle">
+      <UniqueIdentifier>{8c85fc24-da46-4a9e-8c58-4ea55959343e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Game\Battle\Character">
+      <UniqueIdentifier>{6239a2e2-eec5-4972-9941-ebb53ee2ff27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Game\Battle\Character\Base">
+      <UniqueIdentifier>{4363aa94-07dd-4923-bc47-6f420e0b30be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Game\Battle\Character\Enemy">
+      <UniqueIdentifier>{83ab7327-9fde-4b97-bae8-d5dffc93fa95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Game\Battle\Character\Player">
+      <UniqueIdentifier>{c05e0f30-2d0e-4acb-ae58-f3da852e04c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Game\Battle\BattleManager">
+      <UniqueIdentifier>{4f829a75-4db1-4d04-aab8-a95927279df3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
