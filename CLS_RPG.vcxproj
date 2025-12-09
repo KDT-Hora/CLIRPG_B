@@ -132,7 +132,11 @@
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\drawble.h" />
+    <ClInclude Include="src\EscSequence.h" />
     <ClInclude Include="src\GameManager.h" />
+    <ClInclude Include="src\Iwindow.h" />
+    <ClInclude Include="src\Singleton.h" />
     <ClInclude Include="src\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

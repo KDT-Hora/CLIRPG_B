@@ -2,10 +2,20 @@
 //
 
 #include <iostream>
+#include "GameManager.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+//   std::cout << "1234567890123456789012345678901234567890123456789012345678901234567890123456789\n";
+//
+//    for(int i = 0; i < 100; i++) {
+//        std::cout << "Number: " << i << std::endl;
+//	}
+
+	//	テスト用
+	GameManager gameManager;
+	gameManager.Run();
+
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
