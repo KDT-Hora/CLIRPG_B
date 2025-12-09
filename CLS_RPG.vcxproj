@@ -127,11 +127,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\BattleManager.cpp" />
+    <ClCompile Include="src\BattleView.cpp" />
     <ClCompile Include="src\CLS_RPG.cpp" />
     <ClCompile Include="src\GameManager.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\BattleEnemyController.h" />
+    <ClInclude Include="src\BattleEnemyView.h" />
+    <ClInclude Include="src\BattleManager.h" />
+    <ClInclude Include="src\BattleUnitController.h" />
+    <ClInclude Include="src\BattleUnitView.h" />
+    <ClInclude Include="src\BattleView.h" />
+    <ClInclude Include="src\CharacterState.h" />
     <ClInclude Include="src\GameManager.h" />
     <ClInclude Include="src\Window.h" />
   </ItemGroup>
