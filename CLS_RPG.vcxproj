@@ -141,7 +141,10 @@
     <ClInclude Include="src\BattleUnitView.h" />
     <ClInclude Include="src\BattleView.h" />
     <ClInclude Include="src\CharacterState.h" />
+    <ClInclude Include="src\drawble.h" />
+    <ClInclude Include="src\EscSeq.h" />
     <ClInclude Include="src\GameManager.h" />
+    <ClInclude Include="src\IWindow.h" />
     <ClInclude Include="src\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
