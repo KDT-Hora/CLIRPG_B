@@ -127,11 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CLS_RPG.cpp" />
-    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="src\CLS_RPG.cpp" />
+    <ClCompile Include="src\GameManager.cpp" />
+    <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Window.h" />
+    <ClInclude Include="src\GameManager.h" />
+    <ClInclude Include="src\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
