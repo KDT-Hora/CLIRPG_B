@@ -1,20 +1,60 @@
-﻿// CLS_RPG.cpp : このファイルには 'main' 関数が含まれています。プログラム実行の開始と終了がそこで行われます。
-//
+﻿#include <iostream>
+#include <chrono>
+#include <thread>
+#include "Input.h"
 
-#include <iostream>
+// ゲームの更新処理
+void GameUpdate() {
+	// キー入力の更新
+	auto& input = Input::Instance();
+	// キー入力の更新処理を呼び出す
+	if (input.IsKeyPressed('1')) {
+		std::cout << "攻撃" << std::endl;
+	}
+	// キーが押されている間
+	if (input.IsKeyDown('2')) {
+		std::cout << "守る" << std::endl;
+	}
+	// キーが離された瞬間
+	if (input.IsKeyReleased('3')) {
+		std::cout << "回復" << std::endl;
+	}
+
+	// エンターキーが押されたら終了
+	if (input.IsKeyPressed(VK_RETURN)) {
+		exit(0);
+	}
+	
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	std::cout << "1～3の数字を入力してください。" << std::endl;
+
+	auto& input = Input::Instance();
+
+	const int FPS = 60;
+	const auto frameTime = std::chrono::milliseconds(1000 / FPS);
+
+	while (true)
+	{
+		auto frameStart = std::chrono::steady_clock::now();
+
+		// 入力更新
+		input.Update();
+
+		// ゲーム処理（ゲームロジック）
+		GameUpdate();
+
+		// FPS制御
+		auto frameEnd = std::chrono::steady_clock::now();
+		auto elapsed = frameEnd - frameStart;
+
+		if (elapsed < frameTime)
+		{
+			std::this_thread::sleep_for(frameTime - elapsed);
+		}
+	}
+
+	return 0;
 }
-
-// プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
-// プログラムのデバッグ: F5 または [デバッグ] > [デバッグの開始] メニュー
-
-// 作業を開始するためのヒント: 
-//    1. ソリューション エクスプローラー ウィンドウを使用してファイルを追加/管理します 
-//   2. チーム エクスプローラー ウィンドウを使用してソース管理に接続します
-//   3. 出力ウィンドウを使用して、ビルド出力とその他のメッセージを表示します
-//   4. エラー一覧ウィンドウを使用してエラーを表示します
-//   5. [プロジェクト] > [新しい項目の追加] と移動して新しいコード ファイルを作成するか、[プロジェクト] > [既存の項目の追加] と移動して既存のコード ファイルをプロジェクトに追加します
-//   6. 後ほどこのプロジェクトを再び開く場合、[ファイル] > [開く] > [プロジェクト] と移動して .sln ファイルを選択します
