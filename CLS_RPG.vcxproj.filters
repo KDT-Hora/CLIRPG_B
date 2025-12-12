@@ -45,6 +45,15 @@
     <ClInclude Include="src\BattleView.h">
       <Filter>ソースファイル\Battle\BattleManager</Filter>
     </ClInclude>
+    <ClInclude Include="src\EscSeq.h">
+      <Filter>ソースファイル\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\drawble.h">
+      <Filter>ソースファイル\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IWindow.h">
+      <Filter>ソースファイル\Window</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ソースファイル">

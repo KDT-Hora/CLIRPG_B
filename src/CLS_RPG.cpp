@@ -2,10 +2,16 @@
 //
 
 #include <iostream>
+#include "GameManager.h"
 
 int main()
 {
     std::cout << "Hello World!\n";
+
+	GameManager gameManager;
+	gameManager.Init();
+	gameManager.Run();
+	return 0;
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
