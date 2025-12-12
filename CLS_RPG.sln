@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35828.75 d17.13
+VisualStudioVersion = 17.14.36717.8 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CLS_RPG", "CLS_RPG.vcxproj", "{FD20597F-1372-49B8-9E38-07FAF705B021}"
 EndProject
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9615E776-5BF2-42F3-A8FA-D6BE13456CBF}
+		SolutionGuid = {D689126F-52D6-47BF-8B23-BFDC0DDD2C64}
 	EndGlobalSection
 EndGlobal

@@ -2,10 +2,17 @@
 //
 
 #include <iostream>
+#include "Stage.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	// ステージクラスのインスタンスを生成
+	std::shared_ptr<CStage> Stage = std::make_shared<CStage>();
+
+	// ステージの描画
+	Stage->Draw();
+
+	/*  std::cout << "Hello World!\n";*/
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
