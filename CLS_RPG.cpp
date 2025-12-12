@@ -2,15 +2,38 @@
 //
 
 #include <iostream>
+
 #include "Stage.h"
+#include "StageFactory.h"
+#include "KeyInput.h"
 
 int main()
 {
 	// ステージクラスのインスタンスを生成
-	std::shared_ptr<CStage> Stage = std::make_shared<CStage>();
+	std::shared_ptr<CStage> Stage = CStageFactory::CreateStage(0);
 
-	// ステージの描画
-	Stage->Draw();
+	while(true)
+	{
+		// ステージの描画
+		Stage->Draw();
+
+		// キー入力の取得
+		char key = CKeyInput::GetInstance().GetKey();
+
+		// 入力されたキーによってステージを変更
+		if (key == '1') Stage = CStageFactory::CreateStage(0);
+		else if (key == '2') Stage = CStageFactory::CreateStage(1);
+		else if (key == '3') Stage = CStageFactory::CreateStage(2);
+		else if (key == '4') Stage = CStageFactory::CreateStage(3);
+		else if (key == '5') Stage = CStageFactory::CreateStage(4);
+		else if (key == '6') Stage = CStageFactory::CreateStage(5);
+		else if (key == '7') Stage = CStageFactory::CreateStage(6);
+		else if (key == '8') Stage = CStageFactory::CreateStage(7);
+		else if (key == '9') Stage = CStageFactory::CreateStage(8);
+		else if (key == '0') Stage = CStageFactory::CreateStage(9);
+	}
+
+	
 
 	/*  std::cout << "Hello World!\n";*/
 }

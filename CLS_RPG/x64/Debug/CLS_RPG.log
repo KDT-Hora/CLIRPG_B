@@ -5,6 +5,4 @@ C:\Users\PC_User\source\repos\CLIRPG_B\Stage.h(27,25): warning C4267: '初期化
 C:\Users\PC_User\source\repos\CLIRPG_B\Stage.h(27,52): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
   (ソース ファイル 'CLS_RPG.cpp' をコンパイルしています)
   
-  LINK : 前回のインクリメンタル リンクで C:\Users\PC_User\source\repos\CLIRPG_B\x64\Debug\CLS_RPG.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
-CLS_RPG.obj : error LNK2019: 未解決の外部シンボル "public: void __cdecl CStage::Draw(void)const " (?Draw@CStage@@QEBAXXZ) が関数 main で参照されました
-C:\Users\PC_User\source\repos\CLIRPG_B\x64\Debug\CLS_RPG.exe : fatal error LNK1120: 1 件の未解決の外部参照
+  CLS_RPG.vcxproj -> C:\Users\PC_User\source\repos\CLIRPG_B\x64\Debug\CLS_RPG.exe

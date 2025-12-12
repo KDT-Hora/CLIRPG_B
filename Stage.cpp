@@ -2,6 +2,7 @@
 
 void CStage::Draw() const
 {
+	// ‰æ–ÊƒNƒŠƒA
 #ifdef _WIN32
 	system("cls");
 #else
