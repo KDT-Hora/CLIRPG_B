@@ -1,33 +1,10 @@
 ﻿  CLS_RPG.cpp
-C:\Users\PC_User\source\repos\CLIRPG_B\Stage.h(22,25): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\Users\PC_User\source\repos\CLIRPG_B\Stage.h(27,25): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
   (ソース ファイル 'CLS_RPG.cpp' をコンパイルしています)
   
-C:\Users\PC_User\source\repos\CLIRPG_B\Stage.h(22,52): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\Users\PC_User\source\repos\CLIRPG_B\Stage.h(27,52): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
   (ソース ファイル 'CLS_RPG.cpp' をコンパイルしています)
   
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(476,61): error C2512: 'CStage::CStage': クラス、構造体、共用体に既定のコンストラクターがありません。
-  (ソース ファイル 'CLS_RPG.cpp' をコンパイルしています)
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(476,61):
-      引数リスト '()' を一致させようとしているとき
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xutility(476,61):
-      テンプレートインスタンス化コンテキスト (最初に最も古いもの) は
-          C:\Users\PC_User\source\repos\CLIRPG_B\CLS_RPG.cpp(10,39):
-          コンパイル対象の関数 テンプレート インスタンス化 'std::shared_ptr<CStage> std::make_shared<CStage,>(void)' のリファレンスを確認してください
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(2913,46):
-          コンパイル対象の関数 テンプレート インスタンス化 'std::_Ref_count_obj2<CStage>::_Ref_count_obj2<>(void)' のリファレンスを確認してください
-          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(2100,18):
-          コンパイル対象の関数 テンプレート インスタンス化 'void std::_Construct_in_place<_Ty,>(_Ty &) noexcept(false)' のリファレンスを確認してください
-          with
-          [
-              _Ty=CStage
-          ]
-  
-  KeyInput.cpp
-  Stage.cpp
-C:\Users\PC_User\source\repos\CLIRPG_B\Stage.h(22,25): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
-  (ソース ファイル 'Stage.cpp' をコンパイルしています)
-  
-C:\Users\PC_User\source\repos\CLIRPG_B\Stage.h(22,52): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
-  (ソース ファイル 'Stage.cpp' をコンパイルしています)
-  
-  コードを生成中...
+  LINK : 前回のインクリメンタル リンクで C:\Users\PC_User\source\repos\CLIRPG_B\x64\Debug\CLS_RPG.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
+CLS_RPG.obj : error LNK2019: 未解決の外部シンボル "public: void __cdecl CStage::Draw(void)const " (?Draw@CStage@@QEBAXXZ) が関数 main で参照されました
+C:\Users\PC_User\source\repos\CLIRPG_B\x64\Debug\CLS_RPG.exe : fatal error LNK1120: 1 件の未解決の外部参照

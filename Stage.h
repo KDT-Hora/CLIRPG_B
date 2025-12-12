@@ -17,7 +17,12 @@ private:
 
 public:
 
-	// コンストラクタ
+	// デフォルトコンストラクタ
+	CStage()
+		:Data(), width(0), height(0) 
+	{}
+
+	// 引数ありコンストラクタ
 	CStage(const std::vector<std::string>& MapData)
 		: Data(MapData), width(MapData[0].size()), height(MapData.size())
 	{
