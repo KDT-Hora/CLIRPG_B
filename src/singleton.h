@@ -6,6 +6,7 @@
 template <typename T>
 class Singleton
 {
+protected:
 
 	Singleton()noexcept
 		= default;
