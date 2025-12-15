@@ -13,10 +13,17 @@ struct State {
 };
 
 class CharacterState {
-public:
-	virtual ~CharacterState(){}
 
-	int Attack();
-    bool IsDefence();
-	bool IsDead();
+protected:
+
+	State state;
+
+public:
+
+	virtual ~CharacterState() = default;
+
+	const State& GetState()const
+	{
+		return state;
+	}
 };
