@@ -1,50 +1,67 @@
-﻿// CLS_RPG.cpp : このファイルには 'main' 関数が含まれています。プログラム実行の開始と終了がそこで行われます。
-//
-
+﻿
 #include <iostream>
 
 #include "Stage.h"
 #include "StageFactory.h"
 #include "KeyInput.h"
+#include "PlayerModel.h"
+#include "PlayerCon.h"
+#include "PlayerView.h"
 
 int main()
 {
+	// ステージ数
+	int cur_stage = 0;
+
 	// ステージクラスのインスタンスを生成
 	std::shared_ptr<CStage> Stage = CStageFactory::CreateStage(0);
+
+	// プレイヤーのインスタンスを生成
+	std::shared_ptr<CPlayerModel> PlayerModel = std::make_shared<CPlayerModel>(5, 5);
+	std::shared_ptr<CPlayerView> PlayerView = std::make_shared<CPlayerView>();
+	std::shared_ptr<CPlayerController> PlayerCon = std::make_shared<CPlayerController>(PlayerModel);
 
 	while(true)
 	{
 		// ステージの描画
-		Stage->Draw();
+		Stage->DrawWithPlayer(PlayerModel->GetX(), PlayerModel->GetY());
+		//// プレイヤーの描画
+		//PlayerView->Draw(*PlayerModel);
 
 		// キー入力の取得
 		char key = CKeyInput::GetInstance().GetKey();
+		// プレイヤーの入力処理
+		PlayerCon->HandleInput(key, Stage);
 
-		// 入力されたキーによってステージを変更
-		if (key == '1') Stage = CStageFactory::CreateStage(0);
-		else if (key == '2') Stage = CStageFactory::CreateStage(1);
-		else if (key == '3') Stage = CStageFactory::CreateStage(2);
-		else if (key == '4') Stage = CStageFactory::CreateStage(3);
-		else if (key == '5') Stage = CStageFactory::CreateStage(4);
-		else if (key == '6') Stage = CStageFactory::CreateStage(5);
-		else if (key == '7') Stage = CStageFactory::CreateStage(6);
-		else if (key == '8') Stage = CStageFactory::CreateStage(7);
-		else if (key == '9') Stage = CStageFactory::CreateStage(8);
-		else if (key == '0') Stage = CStageFactory::CreateStage(9);
+		// ステージ切り替え
+		if (PlayerCon->RequestStageChange())
+		{
+			// ステージを順番通りに切り替える
+			cur_stage++;
+
+			// ステージの範囲を決める
+			if (cur_stage > 9) cur_stage = 0;
+
+			Stage = CStageFactory::CreateStage(cur_stage);
+
+			// プレイヤーの位置をリセット
+			PlayerModel->SetPosition(5, 5);
+		}
+
+		//// 入力されたキーによってステージを変更
+		//if (key == '1') Stage = CStageFactory::CreateStage(0);
+		//else if (key == '2') Stage = CStageFactory::CreateStage(1);
+		//else if (key == '3') Stage = CStageFactory::CreateStage(2);
+		//else if (key == '4') Stage = CStageFactory::CreateStage(3);
+		//else if (key == '5') Stage = CStageFactory::CreateStage(4);
+		//else if (key == '6') Stage = CStageFactory::CreateStage(5);
+		//else if (key == '7') Stage = CStageFactory::CreateStage(6);
+		//else if (key == '8') Stage = CStageFactory::CreateStage(7);
+		//else if (key == '9') Stage = CStageFactory::CreateStage(8);
+		//else if (key == '0') Stage = CStageFactory::CreateStage(9);
+
+		
 	}
-
-	
 
 	/*  std::cout << "Hello World!\n";*/
 }
-
-// プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
-// プログラムのデバッグ: F5 または [デバッグ] > [デバッグの開始] メニュー
-
-// 作業を開始するためのヒント: 
-//    1. ソリューション エクスプローラー ウィンドウを使用してファイルを追加/管理します 
-//   2. チーム エクスプローラー ウィンドウを使用してソース管理に接続します
-//   3. 出力ウィンドウを使用して、ビルド出力とその他のメッセージを表示します
-//   4. エラー一覧ウィンドウを使用してエラーを表示します
-//   5. [プロジェクト] > [新しい項目の追加] と移動して新しいコード ファイルを作成するか、[プロジェクト] > [既存の項目の追加] と移動して既存のコード ファイルをプロジェクトに追加します
-//   6. 後ほどこのプロジェクトを再び開く場合、[ファイル] > [開く] > [プロジェクト] と移動して .sln ファイルを選択します

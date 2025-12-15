@@ -13,13 +13,69 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\main">
+      <UniqueIdentifier>{e29fe399-bada-4a2a-b6f1-951d39cbe23d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\key">
+      <UniqueIdentifier>{db3cec38-37fd-4af7-91c6-8c9b37a3ead4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\stage">
+      <UniqueIdentifier>{23ebf5fa-4fcb-4549-a37b-1aeb8623cb9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\chara">
+      <UniqueIdentifier>{007872ba-bc7b-4ae2-88c2-ba0a62c91f84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\stage">
+      <UniqueIdentifier>{a5c89b34-e050-4044-b67a-1d8f4ecc98ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\key">
+      <UniqueIdentifier>{696824dc-e9c6-4325-8d02-8bc2973cc91a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\chara">
+      <UniqueIdentifier>{210cf769-0ae2-4359-bcc8-fa365b7cba46}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CLS_RPG.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\main</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyInput.cpp">
+      <Filter>ソース ファイル\key</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>ソース ファイル\stage</Filter>
     </ClCompile>
     <ClCompile Include="Npc.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\chara</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerModel.cpp">
+      <Filter>ソース ファイル\chara</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerView.cpp">
+      <Filter>ソース ファイル\chara</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerCon.cpp">
+      <Filter>ソース ファイル\chara</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Stage.h">
+      <Filter>ヘッダー ファイル\stage</Filter>
+    </ClInclude>
+    <ClInclude Include="StageFactory.h">
+      <Filter>ヘッダー ファイル\stage</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyInput.h">
+      <Filter>ヘッダー ファイル\key</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerModel.h">
+      <Filter>ヘッダー ファイル\chara</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerView.h">
+      <Filter>ヘッダー ファイル\chara</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerCon.h">
+      <Filter>ヘッダー ファイル\chara</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

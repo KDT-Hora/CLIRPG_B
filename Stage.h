@@ -22,7 +22,7 @@ public:
 		:Data(), width(0), height(0) 
 	{}
 
-	// 引数ありコンストラクタ
+	// 引数コンストラクタ
 	CStage(const std::vector<std::string>& MapData)
 		: Data(MapData), width(MapData[0].size()), height(MapData.size())
 	{
@@ -46,6 +46,11 @@ public:
 	}
 
 	// 描画処理
-	void Draw() const;
-};
+	void DrawWithPlayer(int player_x, int player_y) const;
 
+	// 壁の判定
+	bool IsWall(int x, int y) const;
+
+	// ステージ切り替えを行う関数
+	bool IsEvent(int x, int y) const;
+};

@@ -1,8 +1,20 @@
 ﻿  CLS_RPG.cpp
-C:\Users\PC_User\source\repos\CLIRPG_B\Stage.h(27,25): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+E:\2年\作品\CLIRPG_B\Stage.h(27,25): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
   (ソース ファイル 'CLS_RPG.cpp' をコンパイルしています)
   
-C:\Users\PC_User\source\repos\CLIRPG_B\Stage.h(27,52): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+E:\2年\作品\CLIRPG_B\Stage.h(27,52): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
   (ソース ファイル 'CLS_RPG.cpp' をコンパイルしています)
   
-  CLS_RPG.vcxproj -> C:\Users\PC_User\source\repos\CLIRPG_B\x64\Debug\CLS_RPG.exe
+  Stage.cpp
+E:\2年\作品\CLIRPG_B\Stage.h(27,25): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Stage.cpp' をコンパイルしています)
+  
+E:\2年\作品\CLIRPG_B\Stage.h(27,52): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'Stage.cpp' をコンパイルしています)
+  
+E:\2年\作品\CLIRPG_B\Stage.cpp(30,22): warning C4305: '=': 'int' から 'char' へ切り詰めます。
+E:\2年\作品\CLIRPG_B\Stage.cpp(30,22): warning C4309: '=': 定数値が切り捨てられました。
+E:\2年\作品\CLIRPG_B\Stage.cpp(32,22): warning C4305: '=': 'int' から 'char' へ切り詰めます。
+E:\2年\作品\CLIRPG_B\Stage.cpp(32,22): warning C4309: '=': 定数値が切り捨てられました。
+  コードを生成中...
+  CLS_RPG.vcxproj -> E:\2年\作品\CLIRPG_B\x64\Debug\CLS_RPG.exe
