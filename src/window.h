@@ -6,9 +6,9 @@ class Window : public Singleton<Window>
 {
 	friend class Singleton<Window>;
 
-
-
-
+	
+	
+	
 };
 
 

@@ -1,7 +1,7 @@
 #pragma once
 
 //	継承先でフレンド指定する
-
+//	汎用シングルトンクラス
 
 template <typename T>
 class Singleton
