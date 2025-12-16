@@ -1,5 +1,25 @@
 ﻿################################################################################
-# この .gitignore ファイルは Microsoft(R) Visual Studio によって自動的に作成されました。
+# Visual Studio / C++ (DxLib想定)
 ################################################################################
 
-/.vs/CLS_RPG
+# Visual Studio working folder
+.vs/
+
+# Build results
+Debug/
+Release/
+x64/
+x86/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# IntelliSense / Database
+*.VC.db
+*.VC.opendb
+
+# Logs
+*.log

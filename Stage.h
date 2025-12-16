@@ -52,5 +52,8 @@ public:
 	bool IsWall(int x, int y) const;
 
 	// ステージ切り替えを行う関数
-	bool IsEvent(int x, int y) const;
+	// 次のステージ
+	bool IsNextStage(int x, int y) const;
+	// 前のステージ
+	bool IsPrevStage(int x, int y) const;
 };

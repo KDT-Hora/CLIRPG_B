@@ -21,8 +21,9 @@ void CPlayerController::HandleInput(char key, const std::shared_ptr<CStage>& sta
 	}
 
 	// 画面切り替えマス判定
+	// 次のステージへ
 	if ((key == 'f' || key == 'F') &&
-		stage->IsEvent(model->GetX(), model->GetY()))
+		stage->IsNextStage(model->GetX(), model->GetY()))
 	{
 		// 画面切り替えを有効
 		WantStageChange = true;

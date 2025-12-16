@@ -23,15 +23,6 @@ void CStage::DrawWithPlayer(int player_x, int player_y) const
 	// 範囲ループ
 	for (auto& line : buffer)
 	{
-		// 表示の切り替え
-		for (char& c : line)
-		{
-			// 外枠
-			if (c == '#') c = '■';
-			// 階段
-			if (c == 'c') c = '〇';
-		}
-
 		std::cout << line << std::endl;
 	}
 }
@@ -48,7 +39,7 @@ bool CStage::IsWall(int x, int y) const
 	return Data[y][x] == '#';
 }
 
-bool CStage::IsEvent(int x, int y) const
+bool CStage::IsNextStage(int x, int y) const
 {
 	// マスを指定する
 	if (x < 0 || x >= width || y < 0 || y >= height)
@@ -56,5 +47,16 @@ bool CStage::IsEvent(int x, int y) const
 		return false;
 	}
 
-	return Data[y][x] == 'o';
+	return Data[y][x] == '>';
+}
+
+bool CStage::IsPrevStage(int x, int y) const
+{
+	// マスを指定する
+	if (x < 0 || x >= width || y < 0 || y >= height)
+	{
+		return false;
+	}
+
+	return Data[y][x] == '<';
 }
