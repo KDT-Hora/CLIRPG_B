@@ -16,6 +16,10 @@
     <ClCompile Include="src\BattleView.cpp">
       <Filter>ソースファイル\Battle\BattleManager</Filter>
     </ClCompile>
+    <ClCompile Include="src\Game\PartyMG\PartyMG.cpp" />
+    <ClCompile Include="src\System\Scene\Title\Title.cpp" />
+    <ClCompile Include="src\System\Scene\SceneMG.cpp" />
+    <ClCompile Include="src\System\Window\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\GameManager.h">
@@ -54,6 +58,16 @@
     <ClInclude Include="src\IWindow.h">
       <Filter>ソースファイル\Window</Filter>
     </ClInclude>
+    <ClInclude Include="src\Game\PartyMG\PartyMG.h" />
+    <ClInclude Include="src\Game\CharacterState.h" />
+    <ClInclude Include="src\System\Input\InputMG.h" />
+    <ClInclude Include="src\System\Scene\Title\Title.h" />
+    <ClInclude Include="src\System\Scene\IScene.h" />
+    <ClInclude Include="src\System\Scene\SceneMG.h" />
+    <ClInclude Include="src\System\Time\DeltaTime.h" />
+    <ClInclude Include="src\System\Window\EscSeq.h" />
+    <ClInclude Include="src\System\Window\Window.h" />
+    <ClInclude Include="src\singleton.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ソースファイル">
