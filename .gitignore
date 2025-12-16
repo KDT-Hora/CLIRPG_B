@@ -2,24 +2,9 @@
 # Visual Studio / C++ (DxLib想定)
 ################################################################################
 
-# Visual Studio working folder
 .vs/
-
-# Build results
-Debug/
-Release/
+ConsoleA.*/
 x64/
-x86/
-
-# User-specific files
-*.user
-*.suo
-*.userosscache
-*.sln.docstates
-
-# IntelliSense / Database
-*.VC.db
-*.VC.opendb
-
-# Logs
-*.log
+*.vcxproj.*
+/.vs/CLS_RPG
+/.vs/CLIRPG_B/v17/DocumentLayout.backup.json
