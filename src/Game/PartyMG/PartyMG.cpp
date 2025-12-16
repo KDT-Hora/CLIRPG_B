@@ -12,7 +12,7 @@ void ParytMG::Init()
 	Status sta1;
 	sta1.STR = 15;
 	sta1.VIT = 12;
-	partyMembers.push_back(std::make_shared<Character>(sta1));
+	partyMembers.push_back(std::make_shared<Character>("name",sta1));
 
 
 
