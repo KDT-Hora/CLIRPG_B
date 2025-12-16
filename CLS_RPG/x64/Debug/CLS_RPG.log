@@ -1,0 +1,16 @@
+﻿  CLS_RPG.cpp
+E:\2年\作品\CLIRPG_B\Stage.h(27,25): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'CLS_RPG.cpp' をコンパイルしています)
+  
+E:\2年\作品\CLIRPG_B\Stage.h(27,52): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'CLS_RPG.cpp' をコンパイルしています)
+  
+  PlayerCon.cpp
+E:\2年\作品\CLIRPG_B\Stage.h(27,25): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'PlayerCon.cpp' をコンパイルしています)
+  
+E:\2年\作品\CLIRPG_B\Stage.h(27,52): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  (ソース ファイル 'PlayerCon.cpp' をコンパイルしています)
+  
+  コードを生成中...
+  CLS_RPG.vcxproj -> E:\2年\作品\CLIRPG_B\x64\Debug\CLS_RPG.exe
