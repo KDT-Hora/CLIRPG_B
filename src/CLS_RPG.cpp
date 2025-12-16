@@ -11,6 +11,8 @@ int main()
 	GameManager::Instance().Init();
 	GameManager::Instance().Run();
 
+	std::cout << "Game End";
+
 	return 0;
 }
 

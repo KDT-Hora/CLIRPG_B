@@ -23,6 +23,12 @@ void GameManager::Run()
 
 		this->update();
 		this->draw();
+
+		if (InputMG::Instance().GetKey() == InputMG::Key::CANCEL)
+		{
+			break;
+		}
+
 	}
 
 }
