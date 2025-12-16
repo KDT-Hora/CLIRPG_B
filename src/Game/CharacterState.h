@@ -7,16 +7,17 @@ struct Status {
 	int Lv = 1;
 	int Exp = 0;
 
-	int MaxHP;
+	int MaxHP = 100;
 	int HP = MaxHP;
-	int MaxMP;
+	int MaxMP = 50;
 	int MP = MaxMP;
 
-	int STR;
-	int INT;
-	int VIT;
-	int MND;
-	int AGI;
+	//	ïWèÄílÅ@ÇPÇO
+	int STR = 10;
+	int INT = 10;
+	int VIT = 10;
+	int MND = 10;
+	int AGI = 10;
 
 	void LevelUp()
 	{
