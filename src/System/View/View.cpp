@@ -17,5 +17,13 @@ void View::Update()
 		return;
 	}
 
-	//	‚©‚«‚©‚¯
+	//	‰æ–ÊƒNƒŠƒA
+	system("cls");
+
+	//	•`‰æ
+	for (auto a : cureentBuffer)
+	{
+		std::cout << a << std::endl;
+	}
+
 }

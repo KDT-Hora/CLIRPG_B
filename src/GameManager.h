@@ -29,7 +29,6 @@ public :
 private:
 
 	void update();
-	void draw();
 
 };
 

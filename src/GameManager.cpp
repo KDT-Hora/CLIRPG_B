@@ -6,6 +6,7 @@
 #include "System/Scene/SceneMG.h"
 
 #include "System/Input/InputMG.h"
+#include "System/View/View.h"
 
 void GameManager::Init()
 {
@@ -19,11 +20,16 @@ void GameManager::Run()
 	while (true)
 	{
 		//	システム的な更新
+		View::Instance().Clear();
 		InputMG::Instance().Update();
 
 		this->update();
-		this->draw();
 
+		//	画面の更新
+		View::Instance().Update();
+
+		//	強制終了
+		//	デバッグ用処理
 		if (InputMG::Instance().GetKey() == InputMG::Key::CANCEL)
 		{
 			break;
@@ -41,8 +47,3 @@ void GameManager::update()
 
 }
 
-void GameManager::draw()
-{
-
-
-}
