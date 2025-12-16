@@ -14,6 +14,8 @@ void ParytMG::Init()
 	sta1.VIT = 12;
 	partyMembers.push_back(std::make_shared<Character>("name",sta1));
 
+
+
 }
 
 //	メンバーを追加するメソッド
