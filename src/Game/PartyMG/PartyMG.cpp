@@ -15,7 +15,6 @@ void ParytMG::Init()
 	partyMembers.push_back(std::make_shared<Character>("name",sta1));
 
 
-
 }
 
 //	メンバーを追加するメソッド
