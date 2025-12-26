@@ -4,11 +4,6 @@
 #include "Title/Title.h"
 #include "Field/FieldController.h"
 
-//	一時的なインクルード
-#include "../Input/InputMG.h"
-
-
-
 SceneMG::SceneMG()
 {
 	this->changeExcute(SceneType::Title);
@@ -50,7 +45,6 @@ void SceneMG::changeExcute(SceneType type)
 	else if (type == SceneType::Field)
 	{
 		currentScene = std::make_unique<FieldController>();
-
 	}
 	else if (type == SceneType::Battle)
 	{

@@ -8,6 +8,9 @@ void FieldController::SetupStageObjects()
 	Map_Manager.GetMapData().GetStartPos(px, py);
 	M_Player.SetPos(px, py); // 座標を入れる
 
+	// 初期位置設定後に視界の確立
+	Map_Manager.GetMapData().UpdateExploredArea(px, py);
+
 	// NPCの座標設定
 	int nx, ny;
 	nx = Map_Manager.GetMapData().GetWidth() / 2;
@@ -36,6 +39,12 @@ void FieldController::HandleMove()
 	// 入力更新処理
 	if (Player_Ctrl.InputUpdate(M_Player, Map))
 	{
+		// 初期位置設定後に視界の確立
+		Map_Manager.GetMapData().UpdateExploredArea(
+			M_Player.GetX(),
+			M_Player.GetY()
+		);
+
 		Map_Manager.MarkDirty(); // 移動した時だけ描画
 	}
 }
@@ -103,6 +112,12 @@ void FieldController::HandleStairs()
 		New_Map.GetStairUpPos(x, y);
 		M_Player.SetPos(x - 1, y);
 	}
+
+	// 初期位置設定後に視界の確立
+	Map_Manager.GetMapData().UpdateExploredArea(
+		M_Player.GetX(),
+		M_Player.GetY()
+	);
 
 	// 画面の更新
 	Map_Manager.MarkDirty();

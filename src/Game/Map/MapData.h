@@ -44,7 +44,10 @@ public:
 	void Init(int w, int h, const int* data);
 
 	//	視界の更新
-	void UpdateExploredArea(int x, int y);
+	void UpdateExploredArea(int px, int py);
+
+	// タイルが見えるかどうかの関数
+	bool IsExplored(int px, int py) const;
 
 	//	指定タイルの情報を取得
 	int GetTile(int x, int y) const;

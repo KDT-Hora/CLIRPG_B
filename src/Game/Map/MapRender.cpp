@@ -7,6 +7,13 @@ void MapRender::Draw(const MapData& m_Map, const Player& m_Player, const Npc& m_
 	{
 		for (int x = 0; x < m_Map.GetWidth(); ++x)
 		{
+			// 視界の外のタイルは見えないようにする
+			if (!m_Map.IsExplored(x, y))
+			{
+				std::cout << "**";
+				continue;
+			}
+
 			// プレイヤー描画
 			if (x == m_Player.GetX() && y == m_Player.GetY())
 			{

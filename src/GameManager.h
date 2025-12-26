@@ -10,6 +10,9 @@
 #include "System/Time/DeltaTime.h"
 #include "System/Scene/SceneMG.h"
 
+// デバッグ用
+//#include "System/Scene/Field/FieldController.h"
+
 class GameManager:public Singleton<GameManager>
 {
 	friend Singleton<GameManager>;
@@ -20,6 +23,9 @@ class GameManager:public Singleton<GameManager>
 	std::unique_ptr<DeltaTime> deltaTime;
 	//	シーン管理クラス
 	std::unique_ptr<SceneMG> sceneMG;
+
+	// デバッグ用
+//	std::unique_ptr<FieldController> Field;
 
 public :
 

@@ -21,8 +21,32 @@ void MapData::Init(int w, int h, const int* data)
 	}
 }
 
-void MapData::UpdateExploredArea(int x, int y)
+void MapData::UpdateExploredArea(int px, int py)
 {
+	// 見える範囲（周辺４マス）
+	const int range = 4;
+
+	// マスの設定
+	for (int dy = -range; dy <= range; ++dy)
+	{
+		for (int dx = -range; dx <= range; ++dx)
+		{
+			int nx = px + dx;
+			int ny = py + dy;
+
+			if(nx < 0 || nx >= width || ny < 0 || ny >= height) continue;
+
+			explored[ny][nx] = true;
+		}
+	}
+}
+
+bool MapData::IsExplored(int px, int py) const
+{
+	// 特定の範囲では処理範囲では描画を行わない
+	if (px < 0 || px >= width || py < 0 || py >= height) return false;
+
+	return explored[py][px];
 }
 
 int MapData::GetTile(int x, int y) const

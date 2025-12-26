@@ -13,9 +13,9 @@ bool MapManager::LoadMap(int stage_id)
 	return true;
 }
 
-const MapData& MapManager::GetMapData() const
+MapData& MapManager::GetMapData()
 {
-	// TODO: return ステートメントをここに挿入します
+	// リターンでMapDataを呼び出す
 	return *MapDataPtr;
 }
 

@@ -30,8 +30,9 @@ public:
 
 	// マップ読み込み関数
 	bool LoadMap(int stage_id);
+
 	// マップデータ取得関数
-	const MapData& GetMapData() const;
+	MapData& GetMapData();
 
 	// 画面制御関数
 	bool DrawIfNeeded(const Player& m_Player, const Npc& m_Npc);
