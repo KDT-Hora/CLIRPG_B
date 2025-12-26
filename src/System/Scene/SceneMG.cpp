@@ -2,11 +2,7 @@
 
 //	シーンの読み込み
 #include "Title/Title.h"
-
-//	一時的なインクルード
-#include "../Input/InputMG.h"
-
-
+#include "Field/FieldController.h"
 
 SceneMG::SceneMG()
 {
@@ -48,8 +44,7 @@ void SceneMG::changeExcute(SceneType type)
 	}
 	else if (type == SceneType::Field)
 	{
-		currentScene = std::make_unique<TitleScene>();
-
+		currentScene = std::make_unique<FieldController>();
 	}
 	else if (type == SceneType::Battle)
 	{

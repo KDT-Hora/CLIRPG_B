@@ -46,6 +46,12 @@ public:
             }
             else {
                 switch (ch) {
+                // ˆÚ“®
+                case 'w': currentKey = UP; break;    // W
+                case 's': currentKey = DOWN; break;  // S
+                case 'a': currentKey = LEFT; break;  // A
+                case 'd': currentKey = RIGHT; break; // D
+
                 case 13: currentKey = ENTER; break; // Enter
                 case 27: currentKey = CANCEL; break; // Esc
                 case 'z': currentKey = ENTER; break;
