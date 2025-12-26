@@ -30,19 +30,15 @@ void GameManager::Run()
 		}
 
 	}
-
 }
 
 void GameManager::update()
 {
-
 	auto dt = deltaTime->GetSeconds();
 	this->sceneMG->Update(dt);
-
 }
 
 void GameManager::draw()
 {
-
 
 }

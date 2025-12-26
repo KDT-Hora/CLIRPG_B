@@ -30,6 +30,5 @@ private:
 
 	void update();
 	void draw();
-
 };
 
