@@ -1,6 +1,6 @@
 #pragma once
 #include "Game/Map/MapData.h"
-#include "Game/Map/Player/Player.h"
+#include "Game/Map/Player/FieldPlayer.h"
 #include "Game/Map/Npc/Npc.h"
 
 class MapRender

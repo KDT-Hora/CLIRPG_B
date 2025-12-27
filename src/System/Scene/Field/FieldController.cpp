@@ -33,20 +33,50 @@ void FieldController::Init(int start_stage)
 
 void FieldController::HandleMove()
 {
+	// 座標の設定用ローカル変数
+	int px = 0;
+	int py = 0;
+
+	// キー入力の取得
+	auto key = InputMG::Instance().GetKey();
+
+	// キー入力による移動処理
+	switch (key)
+	{
+	case InputMG::UP:		py = -1; break;
+	case InputMG::DOWN:		py = 1; break;
+	case InputMG::LEFT:		px = -1; break;
+	case InputMG::RIGHT:	px = 1; break;
+	}
+
+	// 特定の状態の時はリターンを返す
+	if (px == 0 && py == 0)
+	{
+		return;
+	}
+
 	// ステージの情報をデータに入れる
 	const MapData& Map = Map_Manager.GetMapData();
 
-	// 入力更新処理
-	if (Player_Ctrl.InputUpdate(M_Player, Map))
-	{
-		// 初期位置設定後に視界の確立
-		Map_Manager.GetMapData().UpdateExploredArea(
-			M_Player.GetX(),
-			M_Player.GetY()
-		);
+	// 座標移動用ローカル変数
+	int nx = M_Player.GetX() + px;
+	int ny = M_Player.GetY() + py;
 
-		Map_Manager.MarkDirty(); // 移動した時だけ描画
-	}
+	// 移動できるときはリターンを返す
+	if (!Map.CanMove(nx, ny))
+		return;
+
+	// プレイヤーの移動入力更新処理
+	Player_Ctrl.InputUpdate(M_Player, px, py);
+
+	// 初期位置設定後に視界の確立
+	Map_Manager.GetMapData().UpdateExploredArea(
+		M_Player.GetX(),
+		M_Player.GetY()
+	);
+
+	Map_Manager.MarkDirty(); // 移動した時だけ描画
+
 }
 
 void FieldController::HandleStairs()
@@ -137,6 +167,19 @@ void FieldController::Update(double dt)
 
 void FieldController::Draw()
 {
-	// マップの描画処理
-	Map_Manager.DrawIfNeeded(M_Player, M_Npc);
-} 
+	if (!Map_Manager.IsDirty())
+		return;
+
+	// 画面のクリア
+	FieldViewPtr->Clear();
+	// 描画
+	FieldViewPtr->DrawField
+	(
+		Map_Manager.GetMapData(),
+		M_Player,
+		M_Npc
+	);
+
+	// マップの描画クリア処理
+	Map_Manager.ClearDirty();
+}

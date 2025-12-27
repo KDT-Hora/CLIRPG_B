@@ -3,7 +3,7 @@
 
 #include "Game/Map/MapData.h"
 #include "Game/Map/MapRender.h"
-#include "Game/Map/Player/Player.h"
+#include "Game/Map/Player/FieldPlayer.h"
 #include "Game/Map/Npc/Npc.h"
 
 // マップの管理クラス
@@ -15,11 +15,10 @@ private:
 
 	// マップデータクラス
 	std::unique_ptr<MapData> MapDataPtr = std::make_unique<MapData>();
-	// マップ描画クラス
-	MapRender MapRenderObj;
+	
 
 	// 画面が変更されたかどうかのフラグ
-	bool IsDirty = true;
+	bool m_IsDirty = true;
 
 public:
 
@@ -32,9 +31,12 @@ public:
 	bool LoadMap(int stage_id);
 
 	// マップデータ取得関数
-	MapData& GetMapData();
+	MapData& GetMapData() const;
 
-	// 画面制御関数
-	bool DrawIfNeeded(const Player& m_Player, const Npc& m_Npc);
+	// 画面が変更されたかの状態管理関数
+	bool IsDirty() const;
+	// 画面変更用
 	void MarkDirty();
+	// 画面リセット用
+	void ClearDirty();
 };

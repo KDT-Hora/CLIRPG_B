@@ -1,9 +1,11 @@
 #pragma once
 
 #include "Game/Map/MapManager.h"
-#include "Game/Map/Player/Player.h"
-#include "Game/Map/Player/PlayerCon.h"
+#include "Game/Map/Player/FieldPlayer.h"
+#include "Game/Map/Player/FieldPlayerCon.h"
 #include "Game/Map/Npc/Npc.h"
+
+#include "System/Scene/Field/FieldView/FieldViewSystem.h"
 #include "System/Scene/IScene.h"
 
 // フィールドクラス
@@ -32,6 +34,8 @@ private:
 
 	// 画面遷移
 	StageMoveDir move_dir = StageMoveDir::None;
+	// フィールド描画管理クラスを呼び出す
+	std::unique_ptr<FieldViewSystem> FieldViewPtr = std::make_unique<FieldViewSystem>();
 
 	// 現在のステージ
 	int current_stage = 1;

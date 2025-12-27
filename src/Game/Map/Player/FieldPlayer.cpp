@@ -1,4 +1,4 @@
-#include "Player.h"
+#include "Game/Map/Player/FieldPlayer.h"
 
 void Player::SetPos(int arg_x, int arg_y)
 {

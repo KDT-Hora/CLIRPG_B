@@ -49,6 +49,9 @@ public:
 	// タイルが見えるかどうかの関数
 	bool IsExplored(int px, int py) const;
 
+	// 移動できるかできないかの判定用関数
+	bool CanMove(int px, int py) const;
+
 	//	指定タイルの情報を取得
 	int GetTile(int x, int y) const;
 

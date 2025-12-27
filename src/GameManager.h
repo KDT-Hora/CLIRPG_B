@@ -25,7 +25,7 @@ class GameManager:public Singleton<GameManager>
 	std::unique_ptr<SceneMG> sceneMG;
 
 	// デバッグ用
-//	std::unique_ptr<FieldController> Field;
+	/*std::unique_ptr<FieldController> Field;*/
 
 public :
 

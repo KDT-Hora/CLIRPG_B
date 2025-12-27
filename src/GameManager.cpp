@@ -14,7 +14,7 @@ void GameManager::Init()
 	this->sceneMG = std::make_unique<SceneMG>();
 	
 	// デバッグ用
-//	this->Field = std::make_unique<FieldController>();
+	/*this->Field = std::make_unique<FieldController>();*/
 }
 
 void GameManager::Run()
@@ -41,11 +41,11 @@ void GameManager::update()
 	this->sceneMG->Update(dt);
 
 	// デバッグ用
-//	this->Field->Update(dt);
+	/*this->Field->Update(dt);*/
 }
 
 void GameManager::draw()
 {
 	// デバッグ用
-//	this->Field->Draw();
+	//this->Field->Draw();
 }

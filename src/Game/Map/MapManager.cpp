@@ -9,31 +9,27 @@ bool MapManager::LoadMap(int stage_id)
 	if (!MapFactory::CreateStage(stage_id, *MapDataPtr))
 		return false;
 
-	IsDirty = true;
+	m_IsDirty = true;
 	return true;
 }
 
-MapData& MapManager::GetMapData()
+MapData& MapManager::GetMapData() const
 {
 	// リターンでMapDataを呼び出す
 	return *MapDataPtr;
 }
 
-bool MapManager::DrawIfNeeded(const Player& m_Player, const Npc& m_Npc)
+bool MapManager::IsDirty() const
 {
-	if (!IsDirty)
-	{
-		return 0;
-	}
-
-	system("cls"); // 画面クリア
-	MapRenderObj.Draw(*MapDataPtr, m_Player, m_Npc); // マップ描画
-
-	IsDirty = false;
-	return true;
+	return m_IsDirty;
 }
 
 void MapManager::MarkDirty()
 {
-	IsDirty = true;
+	m_IsDirty = true;
+}
+
+void MapManager::ClearDirty()
+{
+	m_IsDirty = false;
 }

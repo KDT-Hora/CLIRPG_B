@@ -49,6 +49,23 @@ bool MapData::IsExplored(int px, int py) const
 	return explored[py][px];
 }
 
+bool MapData::CanMove(int px, int py) const
+{
+	// 範囲外
+	if (px < 0 || px >= GetWidth() || py < 0 || py >= GetHeight())
+	{
+		return false;
+	}
+
+	// 壁
+	if (GetTile(px, py) == static_cast<int>(TileType::Wall))
+	{
+		return false;
+	}
+
+	return true;
+}
+
 int MapData::GetTile(int x, int y) const
 {
 	// ステージの範囲を取得
