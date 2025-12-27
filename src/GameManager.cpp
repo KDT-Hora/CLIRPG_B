@@ -1,17 +1,15 @@
 #include "GameManager.h"
 
 
-#include "System/Window/Window.h"
 #include "System/Time/DeltaTime.h"
 #include "System/Scene/SceneMG.h"
-
+#include "System/View/View.h"
 #include "System/Input/InputMG.h"
 
 void GameManager::Init()
 {
-	this->window = std::make_unique<Window>();
 	this->deltaTime = std::make_unique<DeltaTime>();
-	this->sceneMG = std::make_unique<SceneMG>();
+	SceneMG::Instance().Init();
 }
 
 void GameManager::Run()
@@ -20,6 +18,7 @@ void GameManager::Run()
 	{
 		//	システム的な更新
 		InputMG::Instance().Update();
+		View::Instance().ClearBuffer();
 
 		this->update();
 		this->draw();
@@ -37,12 +36,13 @@ void GameManager::update()
 {
 
 	auto dt = deltaTime->GetSeconds();
-	this->sceneMG->Update(dt);
+	SceneMG::Instance().Update(dt);
 
 }
 
 void GameManager::draw()
 {
-
+	//	描画システム更新
+	View::Instance().Update();
 
 }

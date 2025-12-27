@@ -1,7 +1,9 @@
 #include "View.h"
 
-void View::Clear()
+void View::ClearBuffer()
 {
+	//	バッファのデータを移動させる
+	lastBuffer = cureentBuffer;
 	cureentBuffer.clear();
 }
 
@@ -12,6 +14,7 @@ void View::Add(const std::string& text)
 
 void View::Update()
 {
+	//	前の描画と比較して、同じならスルー
 	if (cureentBuffer == lastBuffer)
 	{
 		return;
