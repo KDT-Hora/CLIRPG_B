@@ -8,9 +8,10 @@
 
 
 
-SceneMG::SceneMG()
+void SceneMG::Init()
 {
-	this->changeExcute(SceneType::Title);
+	SetChange(SceneType::Title);
+	changeExcute();
 }
 
 void SceneMG::Update(double dt)
@@ -18,19 +19,13 @@ void SceneMG::Update(double dt)
 	if (currentScene)
 	{
 		currentScene->Update(dt);
+		currentScene->Draw();
 	}
 
-	// シーン遷移処理があればここで実行
-	if (change) 
+	if (change)
 	{
-		// 実際はswitch文でnew Field(), new Battle()などを生成
-		// currentScene = std::make_unique<FieldScene>(); 
-		change = false;
+		changeExcute();
 	}
-}
-
-void SceneMG::Draw()
-{
 }
 
 //	シーン切り替え設定
@@ -40,27 +35,30 @@ void SceneMG::SetChange(SceneType type)
 	change = true;
 }
 
-void SceneMG::changeExcute(SceneType type)
+void SceneMG::changeExcute()
 {
-	if (type == SceneType::Title)
+	switch (nextSceneType)
 	{
+	case SceneType::Title:		
 		currentScene = std::make_unique<TitleScene>();
-	}
-	else if (type == SceneType::Field)
-	{
+		break;
+
+	case SceneType::Field:
 		currentScene = std::make_unique<TitleScene>();
+		break;
 
-	}
-	else if (type == SceneType::Battle)
-	{
+	case SceneType::Battle:
 		currentScene = std::make_unique<TitleScene>();
+		break;
 
-	}
-	else if (type == SceneType::Result)
-	{
+	case SceneType::Result:
 		currentScene = std::make_unique<TitleScene>();
+		break;
 
+	default:
+		break;
 	}
 
-
+	//	フラグをおる
+	change = false;
 }

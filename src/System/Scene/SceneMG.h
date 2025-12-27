@@ -2,12 +2,15 @@
 
 #include <memory>
 #include <iostream>
-#include "map"
+
+#include "../../singleton.h"
 
 #include "IScene.h"
 
-class SceneMG
+class SceneMG:public Singleton<SceneMG>
 {
+	friend Singleton<SceneMG>;
+
 private:
 
 	std::unique_ptr<IScene> currentScene;
@@ -17,18 +20,16 @@ private:
 
 	
 public:
-
-	SceneMG();
 	
-	void Update(double dt);
+	void Init();
 
-	void Draw();
+	void Update(double dt);
 
 	void SetChange(SceneType type);
 	
 private:
 
-	void changeExcute(SceneType type);
+	void changeExcute();
 
 
 };
