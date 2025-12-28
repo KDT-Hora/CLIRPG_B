@@ -1,6 +1,6 @@
 #pragma once
 
-class Player
+class MapPlayer
 {
 private:
 
@@ -11,12 +11,12 @@ private:
 public:
 
 	// コンストラクタ
-	Player()
+	MapPlayer()
 		: m_x(0),m_y(0)
 	{ }
 
 	// デストラクタ
-	virtual ~Player() = default;
+	virtual ~MapPlayer() = default;
 
 	// 座標導入処理
 	void SetPos(int arg_x, int arg_y);

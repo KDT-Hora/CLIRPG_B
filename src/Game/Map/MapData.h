@@ -34,8 +34,11 @@ private:
 
 public:
 
-	// デフォルトコンストラクタ
-	MapData() = default;
+	// 引数コンストラクタ
+	MapData(int w, int h, const int* tiles)
+	{
+		Init(w, h, tiles);
+	}
 
 	// デストラクタ
 	virtual ~MapData() = default;
@@ -53,7 +56,10 @@ public:
 	bool CanMove(int px, int py) const;
 
 	//	指定タイルの情報を取得
-	int GetTile(int x, int y) const;
+	int GetTile(int px, int py) const;
+
+	// 範囲チェック関数
+	bool IsInBounds(int px, int py) const;
 
 	//	マップのサイズ取得
 	int GetWidth() const { return width; }

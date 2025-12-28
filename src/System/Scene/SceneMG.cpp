@@ -2,7 +2,7 @@
 
 //	ÉVÅ[ÉìÇÃì«Ç›çûÇ›
 #include "Title/Title.h"
-#include "Field/FieldController.h"
+#include "Field/FieldScene.h"
 
 SceneMG::SceneMG()
 {
@@ -44,7 +44,7 @@ void SceneMG::changeExcute(SceneType type)
 	}
 	else if (type == SceneType::Field)
 	{
-		currentScene = std::make_unique<FieldController>();
+		currentScene = std::make_unique<FieldScene>();
 	}
 	else if (type == SceneType::Battle)
 	{

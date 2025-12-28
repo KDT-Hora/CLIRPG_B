@@ -2,6 +2,8 @@
 #include "StageData.h"
 #include "MapData.h"
 
+
+
 class MapFactory
 {
 public:
@@ -11,6 +13,6 @@ public:
 	// ステージ情報のサイズを取得するための変数
 	static const int StageTableSize;
 
-	// ステージの変更するための関数
-	static bool CreateStage(int stage_id, MapData& OutMap);
+	// 修正：MapDataを生成して返すように変更
+	static MapData CreateStage(int stage_id);
 };

@@ -1,7 +1,14 @@
-#include "System/Scene/Field/FieldController.h"
+#include "System/Scene/Field/FieldScene.h"
 #include "System/Input/InputMG.h"
 
-void FieldController::SetupStageObjects()
+
+// コンストラクタ
+FieldScene::FieldScene()
+{
+	Init(1);
+}
+
+void FieldScene::SetupStageObjects()
 {
 	// プレイヤーの座標設定
 	int px, py;
@@ -15,13 +22,22 @@ void FieldController::SetupStageObjects()
 	int nx, ny;
 	nx = Map_Manager.GetMapData().GetWidth() / 2;
 	ny = 5;
-	M_Npc.SetPos(nx, ny); // 座標を入れる
+
+	// 範囲外には行かないように設定
+	if (Map_Manager.GetMapData().IsInBounds(nx, ny))
+	{
+		M_Npc.SetPos(nx, ny);	// 座標を入れる
+	}
+	else // 範囲外に行ってしまった場合
+	{
+		M_Npc.SetPos(0, 0);		// ファイルセーフ
+	}
 
 	// 入力によるステージの更新
 	Map_Manager.MarkDirty();
 }
 
-void FieldController::Init(int start_stage)
+void FieldScene::Init(int start_stage)
 {
 	// 最初のステージを設定
 	current_stage = start_stage;
@@ -31,7 +47,7 @@ void FieldController::Init(int start_stage)
 	SetupStageObjects();
 }
 
-void FieldController::HandleMove()
+void FieldScene::HandleMove()
 {
 	// 座標の設定用ローカル変数
 	int px = 0;
@@ -79,7 +95,7 @@ void FieldController::HandleMove()
 
 }
 
-void FieldController::HandleStairs()
+void FieldScene::HandleStairs()
 {
 	// キー入力の取得
 	auto key = InputMG::Instance().GetKey();
@@ -153,32 +169,29 @@ void FieldController::HandleStairs()
 	Map_Manager.MarkDirty();
 }
 
-FieldController::FieldController()
-{
-	Init(1);
-}
-
-void FieldController::Update(double dt)
+void FieldScene::Update(double dt)
 {
 	// 上記の処理を呼び出す
 	HandleMove();
 	HandleStairs();
 }
 
-void FieldController::Draw()
+std::vector<std::string> FieldScene::BuildDrawLines() const
 {
-	if (!Map_Manager.IsDirty())
-		return;
-
-	// 画面のクリア
-	FieldViewPtr->Clear();
-	// 描画
-	FieldViewPtr->DrawField
-	(
+	return FieldViewPtr->BuildFieldLines(
 		Map_Manager.GetMapData(),
 		M_Player,
 		M_Npc
 	);
+}
+
+void FieldScene::Draw()
+{
+	if (!Map_Manager.IsDirty())
+		return;
+	
+	// 描画の呼び出し
+	FieldViewPtr->Submit(BuildDrawLines());
 
 	// マップの描画クリア処理
 	Map_Manager.ClearDirty();

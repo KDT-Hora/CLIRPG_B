@@ -2,9 +2,8 @@
 #include <iostream>
 
 #include "Game/Map/MapData.h"
-#include "Game/Map/MapRender.h"
-#include "Game/Map/Player/FieldPlayer.h"
-#include "Game/Map/Npc/Npc.h"
+#include "Game/Map/Player/MapPlayer.h"
+#include "Game/Map/Npc/MapNpc.h"
 
 // マップの管理クラス
 // 描画や生成をまとめて管理
@@ -14,11 +13,10 @@ class MapManager
 private:
 
 	// マップデータクラス
-	std::unique_ptr<MapData> MapDataPtr = std::make_unique<MapData>();
-	
+	std::unique_ptr<MapData> MapDataPtr;
 
 	// 画面が変更されたかどうかのフラグ
-	bool m_IsDirty = true;
+	bool m_IsDirty = false;
 
 public:
 

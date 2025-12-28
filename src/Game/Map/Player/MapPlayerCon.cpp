@@ -1,6 +1,6 @@
-#include "FieldPlayerCon.h"
+#include "MapPlayerCon.h"
 
-bool PlayerController::InputUpdate(Player& m_Player, int px, int py)
+bool MapPlayerController::InputUpdate(MapPlayer& m_Player, int px, int py)
 {
 	if(px == 0 && py == 0)
 	return false;

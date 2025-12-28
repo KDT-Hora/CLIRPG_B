@@ -11,7 +11,7 @@
 #include "System/Scene/SceneMG.h"
 
 // デバッグ用
-//#include "System/Scene/Field/FieldController.h"
+#include "System/Scene/Field/FieldScene.h"
 
 class GameManager:public Singleton<GameManager>
 {
@@ -25,7 +25,7 @@ class GameManager:public Singleton<GameManager>
 	std::unique_ptr<SceneMG> sceneMG;
 
 	// デバッグ用
-	/*std::unique_ptr<FieldController> Field;*/
+	std::unique_ptr<FieldScene> Field;
 
 public :
 

@@ -34,7 +34,7 @@ void MapData::UpdateExploredArea(int px, int py)
 			int nx = px + dx;
 			int ny = py + dy;
 
-			if(nx < 0 || nx >= width || ny < 0 || ny >= height) continue;
+			if(!IsInBounds(nx, ny)) continue;
 
 			explored[ny][nx] = true;
 		}
@@ -44,7 +44,10 @@ void MapData::UpdateExploredArea(int px, int py)
 bool MapData::IsExplored(int px, int py) const
 {
 	// 特定の範囲では処理範囲では描画を行わない
-	if (px < 0 || px >= width || py < 0 || py >= height) return false;
+	if (!IsInBounds(px, py))
+	{
+		return false;
+	}
 
 	return explored[py][px];
 }
@@ -52,7 +55,7 @@ bool MapData::IsExplored(int px, int py) const
 bool MapData::CanMove(int px, int py) const
 {
 	// 範囲外
-	if (px < 0 || px >= GetWidth() || py < 0 || py >= GetHeight())
+	if (!IsInBounds(px, py))
 	{
 		return false;
 	}
@@ -66,13 +69,18 @@ bool MapData::CanMove(int px, int py) const
 	return true;
 }
 
-int MapData::GetTile(int x, int y) const
+int MapData::GetTile(int px, int py) const
 {
 	// ステージの範囲を取得
-	if (x < 0 || x >= width || y < 0 || y >= height) return static_cast<int>(TileType::Wall);
+	if (!IsInBounds(px, py)) return static_cast<int>(TileType::Wall);
 
 	// タイルのグリッドをreturnで返す
-	return grid[y][x];
+	return grid[py][px];
+}
+
+bool MapData::IsInBounds(int px, int py) const
+{
+	return px >= 0 && px < width && py >= 0 && py < height;
 }
 
 bool MapData::GetStartPos(int& arg_x, int& arg_y) const

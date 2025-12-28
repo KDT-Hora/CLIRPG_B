@@ -3,11 +3,19 @@
 
 bool MapManager::LoadMap(int stage_id)
 {
-	//// ステージの生成を呼び出す
-	//return MapFactory::CreateStage(stage_id, *MapDataPtr);
-
-	if (!MapFactory::CreateStage(stage_id, *MapDataPtr))
+	// ステージの作成検証
+	try
+	{
+		// 選ばれたステージの生成
+		MapDataPtr = std::make_unique<MapData>
+			(
+				MapFactory::CreateStage(stage_id)
+			);
+	}
+	catch (...)	// 例外が出た場合はステージを表示しない
+	{
 		return false;
+	}
 
 	m_IsDirty = true;
 	return true;
