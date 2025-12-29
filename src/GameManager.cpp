@@ -1,28 +1,26 @@
 #include "GameManager.h"
 
 
-#include "System/Window/Window.h"
 #include "System/Time/DeltaTime.h"
 #include "System/Scene/SceneMG.h"
-
+#include "System/View/View.h"
 #include "System/Input/InputMG.h"
 
 void GameManager::Init()
 {
-	this->window = std::make_unique<Window>();
 	this->deltaTime = std::make_unique<DeltaTime>();
-	this->sceneMG = std::make_unique<SceneMG>();
-	
-	// ƒfƒoƒbƒO—p
-	this->Field = std::make_unique<FieldScene>();
+
+	SceneMG::Instance().Init();
+
 }
 
 void GameManager::Run()
 {
 	while (true)
 	{
-		//	ƒVƒXƒeƒ€“I‚ÈXV
+		//	ã‚·ã‚¹ãƒ†ãƒ çš„ãªæ›´æ–°
 		InputMG::Instance().Update();
+		View::Instance().ClearBuffer();
 
 		this->update();
 		this->draw();
@@ -38,14 +36,18 @@ void GameManager::Run()
 void GameManager::update()
 {
 	auto dt = deltaTime->GetSeconds();
-	/*this->sceneMG->Update(dt);*/
 
-	// ƒfƒoƒbƒO—p
+	SceneMG::Instance().Update(dt);
+
+	// ãƒ‡ãƒãƒƒã‚°ç”¨
 	this->Field->Update(dt);
 }
 
 void GameManager::draw()
 {
-	// ƒfƒoƒbƒO—p
-	this->Field->Draw();
+
+	//	æç”»ã‚·ã‚¹ãƒ†ãƒ æ›´æ–°
+	View::Instance().Update();
+
 }
+

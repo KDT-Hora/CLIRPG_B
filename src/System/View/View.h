@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iostream>
-#include <stralign.h>
+#include "../../singleton.h"
 #include <vector>
 
 #include "../../singleton.h"
@@ -22,10 +22,10 @@ public:
 
 	//	バッファクリア
 	//	フレーム頭に呼び出し
-	void Clear();
+	void ClearBuffer();
 
 	//	バッファに追加
-	//	各クラスからアクセス
+	//	各クラスからアクセスs
 	//	描画するものに追加
 	void Add(const std::string& text);
 

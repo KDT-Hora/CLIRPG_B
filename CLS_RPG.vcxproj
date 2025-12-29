@@ -144,7 +144,7 @@
     <ClCompile Include="src\System\Scene\Field\FieldView\FieldViewSystem.cpp" />
     <ClCompile Include="src\System\Scene\SceneMG.cpp" />
     <ClCompile Include="src\System\Scene\Title\Title.cpp" />
-    <ClCompile Include="src\System\Window\Window.cpp" />
+    <ClCompile Include="src\System\View\View.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\GameManager.h" />
@@ -165,8 +165,8 @@
     <ClInclude Include="src\System\Scene\SceneMG.h" />
     <ClInclude Include="src\System\Scene\Title\Title.h" />
     <ClInclude Include="src\System\Time\DeltaTime.h" />
-    <ClInclude Include="src\System\Window\EscSeq.h" />
-    <ClInclude Include="src\System\Window\Window.h" />
+    <ClInclude Include="src\System\View\EscSeq.h" />
+    <ClInclude Include="src\System\View\View.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

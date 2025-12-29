@@ -1,12 +1,13 @@
 #include "SceneMG.h"
 
-//	ƒV[ƒ“‚Ì“Ç‚İ‚İ
+//	ã‚·ãƒ¼ãƒ³ã®èª­ã¿è¾¼ã¿
 #include "Title/Title.h"
 #include "Field/FieldScene.h"
 
-SceneMG::SceneMG()
+void SceneMG::Init()
 {
-	this->changeExcute(SceneType::Title);
+	SetChange(SceneType::Title);
+	changeExcute();
 }
 
 void SceneMG::Update(double dt)
@@ -14,48 +15,46 @@ void SceneMG::Update(double dt)
 	if (currentScene)
 	{
 		currentScene->Update(dt);
+		currentScene->Draw();
 	}
 
-	// ƒV[ƒ“‘JˆÚˆ—‚ª‚ ‚ê‚Î‚±‚±‚ÅÀs
-	if (change) 
+	if (change)
 	{
-		// ÀÛ‚Íswitch•¶‚Ånew Field(), new Battle()‚È‚Ç‚ğ¶¬
-		// currentScene = std::make_unique<FieldScene>(); 
-		change = false;
+		changeExcute();
 	}
 }
 
-void SceneMG::Draw()
-{
-}
-
-//	ƒV[ƒ“Ø‚è‘Ö‚¦İ’è
+//	ã‚·ãƒ¼ãƒ³åˆ‡ã‚Šæ›¿ãˆè¨­å®š
 void SceneMG::SetChange(SceneType type)
 {
 	nextSceneType = type;
 	change = true;
 }
 
-void SceneMG::changeExcute(SceneType type)
+void SceneMG::changeExcute()
 {
-	if (type == SceneType::Title)
+	switch (nextSceneType)
 	{
+	case SceneType::Title:		
 		currentScene = std::make_unique<TitleScene>();
-	}
-	else if (type == SceneType::Field)
-	{
+		break;
+
+	case SceneType::Field:
 		currentScene = std::make_unique<FieldScene>();
-	}
-	else if (type == SceneType::Battle)
-	{
+		break;
+
+	case SceneType::Battle:
 		currentScene = std::make_unique<TitleScene>();
+		break;
 
-	}
-	else if (type == SceneType::Result)
-	{
+	case SceneType::Result:
 		currentScene = std::make_unique<TitleScene>();
+		break;
 
+	default:
+		break;
 	}
 
-
+	//	ãƒ•ãƒ©ã‚°ã‚’ãŠã‚‹
+	change = false;
 }
