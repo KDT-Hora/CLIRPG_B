@@ -58,8 +58,8 @@ public:
 
 	Faction GetFaction()const { return faction; }
 
-	Character(std::string name, Status baseStatas)
-		:name(name), state(baseStatas) 
+	Character(std::string name,Faction faction, Status baseStatas)
+		:name(name),faction(faction), state(baseStatas)
 	{
 	}
 
