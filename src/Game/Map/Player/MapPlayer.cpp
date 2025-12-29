@@ -1,4 +1,4 @@
-#include "Game/Map/Player/MapPlayer.h"
+#include "MapPlayer.h"
 
 void MapPlayer::SetPos(int arg_x, int arg_y)
 {

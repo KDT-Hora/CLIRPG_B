@@ -1,5 +1,5 @@
 #pragma once
-#include "Game/Map/Player/MapPlayer.h"
+#include "MapPlayer.h"
 
 // プレイヤーの座標移動クラス
 // WASDで移動

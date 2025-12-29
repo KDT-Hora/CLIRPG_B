@@ -1,18 +1,18 @@
 #include "FieldViewSystem.h"
-#include "Game/Map/MapData.h"
-#include "Game/Map/Player/MapPlayer.h"
-#include "Game/Map/Npc/MapNpc.h"
+#include "../../../../Game/Map/MapData.h"
+#include "../../../../Game/Map/Player/MapPlayer.h"
+#include "../../../../Game/Map/Npc/MapNpc.h"
+
+//	描画システム
+#include "../../../View/View.h"
 
 #include <iostream>
 #include <cstdlib>
 
-void FieldViewSystem::Clear()
-{
-	// 画面のクリア
-	system("cls");
-}
+FieldViewSystem::~FieldViewSystem() = default;
 
-std::vector<std::string> FieldViewSystem::BuildFieldLines
+//	フィールドの描画メソッド
+void FieldViewSystem::FieldDraw
 (
 	const MapData& m_Map,
 	const MapPlayer& m_Player,
@@ -34,7 +34,7 @@ std::vector<std::string> FieldViewSystem::BuildFieldLines
 			auto Put = [&](const std::string& s)
 			{
 				line += s;
-				line += std::string(TILE_VIEW_WIDTH - s.size(), '  ');
+				line += std::string(TILE_VIEW_WIDTH - s.size(), ' ');
 			};
 
 			// 視界の外のタイルは見えないようにする
@@ -73,29 +73,7 @@ std::vector<std::string> FieldViewSystem::BuildFieldLines
 		}
 
 		// 描画の追加
-		Lines.push_back(line);
+		View::Instance().Add(line);
 	}
-	return Lines;
 }
 
-void FieldViewSystem::Submit(const std::vector<std::string>& lines)
-{
-	// 描画内容が同じときは描画しない
-	if (lines == LastLines)
-	{
-		return;
-	}
-
-	// 画面のクリア
-	Clear();
-
-	// 範囲ループで描画
-	for (const auto& line : lines)
-	{
-		std::cout << line << "\n";
-	}
-
-	// タイルの内容を引数に入れる
-	// 画面の状態を保存
-	LastLines = lines;
-}

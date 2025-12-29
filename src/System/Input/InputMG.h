@@ -62,6 +62,14 @@ public:
     }
 
     Key GetKey() { return currentKey; }
+    bool ChechKey(Key key)
+    {
+        if (key == currentKey)
+        {
+            return true;
+        }
+        return false;
+    }
 
 private:
 

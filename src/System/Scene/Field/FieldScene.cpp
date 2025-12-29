@@ -1,5 +1,5 @@
-#include "System/Scene/Field/FieldScene.h"
-#include "System/Input/InputMG.h"
+#include "FieldScene.h"
+#include "../../Input/InputMG.h"
 
 
 // コンストラクタ
@@ -176,23 +176,12 @@ void FieldScene::Update(double dt)
 	HandleStairs();
 }
 
-std::vector<std::string> FieldScene::BuildDrawLines() const
+void FieldScene::Draw()
 {
-	return FieldViewPtr->BuildFieldLines(
+	// 描画の呼び出し
+	FieldViewPtr->FieldDraw(
 		Map_Manager.GetMapData(),
 		M_Player,
 		M_Npc
 	);
-}
-
-void FieldScene::Draw()
-{
-	if (!Map_Manager.IsDirty())
-		return;
-	
-	// 描画の呼び出し
-	FieldViewPtr->Submit(BuildDrawLines());
-
-	// マップの描画クリア処理
-	Map_Manager.ClearDirty();
 }

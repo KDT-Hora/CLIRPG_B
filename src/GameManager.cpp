@@ -38,9 +38,6 @@ void GameManager::update()
 	auto dt = deltaTime->GetSeconds();
 
 	SceneMG::Instance().Update(dt);
-
-	// デバッグ用
-	this->Field->Update(dt);
 }
 
 void GameManager::draw()

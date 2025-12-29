@@ -15,9 +15,6 @@ class GameManager:public Singleton<GameManager>
 	//	時間管理クラス
 	std::unique_ptr<DeltaTime> deltaTime;
 
-	// デバッグ用
-	std::unique_ptr<FieldScene> Field;
-
 public :
 
 	void Init();

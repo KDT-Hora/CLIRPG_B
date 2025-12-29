@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "Game/Map/Npc/MapNpc.h"
+#include "MapNpc.h"
 
 void MapNpc::SetPos(int px, int py)
 {

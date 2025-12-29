@@ -1,12 +1,13 @@
 #pragma once
 
-#include "Game/Map/MapManager.h"
-#include "Game/Map/Player/MapPlayer.h"
-#include "Game/Map/Player/MapPlayerCon.h"
-#include "Game/Map/Npc/MapNpc.h"
 
-#include "System/Scene/Field/FieldView/FieldViewSystem.h"
-#include "System/Scene/IScene.h"
+#include "../../../Game/Map/MapManager.h"
+#include "../../../Game/Map/Player/MapPlayer.h"
+#include "../../../Game/Map/Player/MapPlayerCon.h"
+#include "../../../Game/Map/Npc/MapNpc.h"
+
+#include "FieldView/FieldViewSystem.h"
+#include "../IScene.h"
 
 // フィールドクラス
 // プレイヤーのフィールド間のタイル移動やステージの更新を行う
@@ -39,9 +40,6 @@ private:
 
 	// 現在のステージ
 	int current_stage = 1;
-
-	// ステージ描画関数
-	std::vector<std::string> BuildDrawLines() const;
 
 	// タイル移動処理関数
 	void HandleMove();

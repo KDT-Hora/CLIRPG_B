@@ -1,9 +1,9 @@
 #pragma once
 #include <iostream>
 
-#include "Game/Map/MapData.h"
-#include "Game/Map/Player/MapPlayer.h"
-#include "Game/Map/Npc/MapNpc.h"
+#include "MapData.h"
+#include "Player/MapPlayer.h"
+#include "Npc/MapNpc.h"
 
 // マップの管理クラス
 // 描画や生成をまとめて管理
