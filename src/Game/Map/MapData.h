@@ -67,6 +67,11 @@ public:
 
 	// 壁やフロア以外でイベントが起こるタイルを関数で定義
 	// フロアはNone、イベントはヒール、エネミー（API）
+	// タイル管理関数
+	bool IsHealTile(int x, int y)const;
+	bool IsEnemyTile(int x, int y)const;
+	bool IsStairUpTile(int x, int y)const;
+	bool IsStairDownTile(int x, int y)const;
 
 	//	マップのサイズ取得
 	int GetWidth() const { return width; }

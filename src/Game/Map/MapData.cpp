@@ -138,3 +138,27 @@ bool MapData::GetStairDownPos(int& arg_x, int& arg_y) const
 	}
 	return false;
 }
+
+bool MapData::IsHealTile(int x, int y) const
+{
+	// returnで対象のタイルを取得
+	return GetTile(x, y) == static_cast<int>(TileType::HealSpot);
+}
+
+bool MapData::IsEnemyTile(int x, int y) const
+{
+	// returnで対象のタイルを取得
+	return GetTile(x, y) == static_cast<int>(TileType::Enemy);
+}
+
+bool MapData::IsStairUpTile(int x, int y) const
+{
+	// returnで対象のタイルを取得
+	return GetTile(x, y) == static_cast<int>(TileType::StairUp);
+}
+
+bool MapData::IsStairDownTile(int x, int y) const
+{
+	// returnで対象のタイルを取得
+	return GetTile(x, y) == static_cast<int>(TileType::StairDown);
+}

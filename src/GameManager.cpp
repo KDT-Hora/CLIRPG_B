@@ -11,7 +11,6 @@ void GameManager::Init()
 	this->deltaTime = std::make_unique<DeltaTime>();
 
 	SceneMG::Instance().Init();
-
 }
 
 void GameManager::Run()
@@ -46,5 +45,6 @@ void GameManager::draw()
 	//	描画システム更新
 	View::Instance().Update();
 
+	
 }
 
