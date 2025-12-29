@@ -2,7 +2,7 @@
 
 // NPC用クラス
 
-class MapNpc
+class MapEnemy
 {
 private:
 
@@ -13,12 +13,12 @@ private:
 public:
 
 	// コンストラクタ
-	MapNpc() = default;
-	MapNpc(int px, int py) : x(px), y(py)
+	MapEnemy() = default;
+	MapEnemy(int px, int py) : x(px), y(py)
 	{ }
 
 	// デストラクタ
-	virtual ~MapNpc() = default;
+	virtual ~MapEnemy() = default;
 
 	// 座標をいれる関数
 	void SetPos(int px, int py);
