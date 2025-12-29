@@ -19,7 +19,7 @@ public:
 	~FieldViewSystem();
 
 	// ‚Pƒ^ƒCƒ‹‚Ì•`‰æ”
-	static constexpr int TILE_VIEW_WIDTH = 4;
+	static constexpr int TILE_VIEW_WIDTH = 3;
 	
 	// •`‰æ—pŠÖ”
 	void FieldDraw

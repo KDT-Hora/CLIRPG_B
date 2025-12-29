@@ -23,8 +23,8 @@ void MapData::Init(int w, int h, const int* data)
 
 void MapData::UpdateExploredArea(int px, int py)
 {
-	// 見える範囲（周辺４マス）
-	const int range = 4;
+	// 見える範囲（周辺2マス）
+	const int range = 2;
 
 	// マスの設定
 	for (int dy = -range; dy <= range; ++dy)
