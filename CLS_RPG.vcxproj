@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -76,6 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>E:\2年\作品\CLIRPG_B\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -90,6 +91,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>E:\2年\作品\CLIRPG_B\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -104,6 +106,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>E:\2年\作品\CLIRPG_B\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -118,6 +121,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>E:\2年\作品\CLIRPG_B\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,7 +134,14 @@
     <ClCompile Include="src\CLS_RPG.cpp" />
     <ClCompile Include="src\GameManager.cpp" />
     <ClCompile Include="src\Game\Map\MapData.cpp" />
+    <ClCompile Include="src\Game\Map\MapFactory.cpp" />
+    <ClCompile Include="src\Game\Map\MapManager.cpp" />
+    <ClCompile Include="src\Game\Map\Npc\MapNpc.cpp" />
+    <ClCompile Include="src\Game\Map\Player\MapPlayer.cpp" />
+    <ClCompile Include="src\Game\Map\Player\MapPlayerCon.cpp" />
     <ClCompile Include="src\Game\PartyMG\PartyMG.cpp" />
+    <ClCompile Include="src\System\Scene\Field\FieldScene.cpp" />
+    <ClCompile Include="src\System\Scene\Field\FieldView\FieldViewSystem.cpp" />
     <ClCompile Include="src\System\Scene\SceneMG.cpp" />
     <ClCompile Include="src\System\Scene\Title\Title.cpp" />
     <ClCompile Include="src\System\View\View.cpp" />
@@ -139,9 +150,17 @@
     <ClInclude Include="src\GameManager.h" />
     <ClInclude Include="src\Game\CharacterState.h" />
     <ClInclude Include="src\Game\Map\MapData.h" />
+    <ClInclude Include="src\Game\Map\MapFactory.h" />
+    <ClInclude Include="src\Game\Map\MapManager.h" />
+    <ClInclude Include="src\Game\Map\Npc\MapNpc.h" />
+    <ClInclude Include="src\Game\Map\Player\MapPlayer.h" />
+    <ClInclude Include="src\Game\Map\Player\MapPlayerCon.h" />
+    <ClInclude Include="src\Game\Map\StageData.h" />
     <ClInclude Include="src\Game\PartyMG\PartyMG.h" />
     <ClInclude Include="src\singleton.h" />
     <ClInclude Include="src\System\Input\InputMG.h" />
+    <ClInclude Include="src\System\Scene\Field\FieldScene.h" />
+    <ClInclude Include="src\System\Scene\Field\FieldView\FieldViewSystem.h" />
     <ClInclude Include="src\System\Scene\IScene.h" />
     <ClInclude Include="src\System\Scene\SceneMG.h" />
     <ClInclude Include="src\System\Scene\Title\Title.h" />

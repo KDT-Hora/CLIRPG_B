@@ -9,14 +9,16 @@
 void GameManager::Init()
 {
 	this->deltaTime = std::make_unique<DeltaTime>();
+
 	SceneMG::Instance().Init();
+
 }
 
 void GameManager::Run()
 {
 	while (true)
 	{
-		//	�V�X�e���I�ȍX�V
+		//	システム的な更新
 		InputMG::Instance().Update();
 		View::Instance().ClearBuffer();
 
@@ -29,20 +31,23 @@ void GameManager::Run()
 		}
 
 	}
-
 }
 
 void GameManager::update()
 {
-
 	auto dt = deltaTime->GetSeconds();
+
 	SceneMG::Instance().Update(dt);
 
+	// デバッグ用
+	this->Field->Update(dt);
 }
 
 void GameManager::draw()
 {
-	//	�`��V�X�e���X�V
+
+	//	描画システム更新
 	View::Instance().Update();
 
 }
+

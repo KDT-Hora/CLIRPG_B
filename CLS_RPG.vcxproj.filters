@@ -4,59 +4,25 @@
     <ClCompile Include="src\GameManager.cpp">
       <Filter>ソースファイル\Game</Filter>
     </ClCompile>
-    <ClCompile Include="src\Window.cpp">
-      <Filter>ソースファイル\Window</Filter>
-    </ClCompile>
     <ClCompile Include="src\CLS_RPG.cpp">
       <Filter>ソースファイル\System</Filter>
-    </ClCompile>
-    <ClCompile Include="src\BattleManager.cpp">
-      <Filter>ソースファイル\Battle\BattleManager</Filter>
-    </ClCompile>
-    <ClCompile Include="src\BattleView.cpp">
-      <Filter>ソースファイル\Battle\BattleManager</Filter>
     </ClCompile>
     <ClCompile Include="src\Game\PartyMG\PartyMG.cpp" />
     <ClCompile Include="src\System\Scene\Title\Title.cpp" />
     <ClCompile Include="src\System\Scene\SceneMG.cpp" />
     <ClCompile Include="src\System\Window\Window.cpp" />
+    <ClCompile Include="src\Game\Map\MapData.cpp" />
+    <ClCompile Include="src\Game\Map\MapFactory.cpp" />
+    <ClCompile Include="src\Game\Map\MapManager.cpp" />
+    <ClCompile Include="src\Game\Map\Player\MapPlayer.cpp" />
+    <ClCompile Include="src\System\Scene\Field\FieldScene.cpp" />
+    <ClCompile Include="src\Game\Map\Player\MapPlayerCon.cpp" />
+    <ClCompile Include="src\Game\Map\Npc\MapNpc.cpp" />
+    <ClCompile Include="src\System\Scene\Field\FieldView\FieldViewSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\GameManager.h">
       <Filter>ソースファイル\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Window.h">
-      <Filter>ソースファイル\Window</Filter>
-    </ClInclude>
-    <ClInclude Include="src\BattleEnemyController.h">
-      <Filter>ソースファイル\Battle\Character\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="src\BattleEnemyView.h">
-      <Filter>ソースファイル\Battle\Character\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="src\BattleUnitController.h">
-      <Filter>ソースファイル\Battle\Character\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="src\BattleUnitView.h">
-      <Filter>ソースファイル\Battle\Character\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="src\CharacterState.h">
-      <Filter>ソースファイル\Battle\Character\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\BattleManager.h">
-      <Filter>ソースファイル\Battle\BattleManager</Filter>
-    </ClInclude>
-    <ClInclude Include="src\BattleView.h">
-      <Filter>ソースファイル\Battle\BattleManager</Filter>
-    </ClInclude>
-    <ClInclude Include="src\EscSeq.h">
-      <Filter>ソースファイル\Window</Filter>
-    </ClInclude>
-    <ClInclude Include="src\drawble.h">
-      <Filter>ソースファイル\Window</Filter>
-    </ClInclude>
-    <ClInclude Include="src\IWindow.h">
-      <Filter>ソースファイル\Window</Filter>
     </ClInclude>
     <ClInclude Include="src\Game\PartyMG\PartyMG.h" />
     <ClInclude Include="src\Game\CharacterState.h" />
@@ -68,6 +34,15 @@
     <ClInclude Include="src\System\Window\EscSeq.h" />
     <ClInclude Include="src\System\Window\Window.h" />
     <ClInclude Include="src\singleton.h" />
+    <ClInclude Include="src\Game\Map\MapData.h" />
+    <ClInclude Include="src\Game\Map\MapFactory.h" />
+    <ClInclude Include="src\Game\Map\StageData.h" />
+    <ClInclude Include="src\Game\Map\MapManager.h" />
+    <ClInclude Include="src\Game\Map\Player\MapPlayer.h" />
+    <ClInclude Include="src\System\Scene\Field\FieldScene.h" />
+    <ClInclude Include="src\Game\Map\Player\MapPlayerCon.h" />
+    <ClInclude Include="src\Game\Map\Npc\MapNpc.h" />
+    <ClInclude Include="src\System\Scene\Field\FieldView\FieldViewSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ソースファイル">

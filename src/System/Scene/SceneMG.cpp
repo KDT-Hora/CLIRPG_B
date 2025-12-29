@@ -1,12 +1,8 @@
 #include "SceneMG.h"
 
-//	ƒV[ƒ“‚Ì“Ç‚İ‚İ
+//	ã‚·ãƒ¼ãƒ³ã®èª­ã¿è¾¼ã¿
 #include "Title/Title.h"
-
-//	ˆê“I‚ÈƒCƒ“ƒNƒ‹[ƒh
-#include "../Input/InputMG.h"
-
-
+#include "Field/FieldScene.h"
 
 void SceneMG::Init()
 {
@@ -28,7 +24,7 @@ void SceneMG::Update(double dt)
 	}
 }
 
-//	ƒV[ƒ“Ø‚è‘Ö‚¦İ’è
+//	ã‚·ãƒ¼ãƒ³åˆ‡ã‚Šæ›¿ãˆè¨­å®š
 void SceneMG::SetChange(SceneType type)
 {
 	nextSceneType = type;
@@ -44,7 +40,7 @@ void SceneMG::changeExcute()
 		break;
 
 	case SceneType::Field:
-		currentScene = std::make_unique<TitleScene>();
+		currentScene = std::make_unique<FieldScene>();
 		break;
 
 	case SceneType::Battle:
@@ -59,6 +55,6 @@ void SceneMG::changeExcute()
 		break;
 	}
 
-	//	ƒtƒ‰ƒO‚ğ‚¨‚é
+	//	ãƒ•ãƒ©ã‚°ã‚’ãŠã‚‹
 	change = false;
 }

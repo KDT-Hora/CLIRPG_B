@@ -5,12 +5,18 @@
 
 #include "System/Time/DeltaTime.h"
 
+// デバッグ用
+#include "System/Scene/Field/FieldScene.h"
+
 class GameManager:public Singleton<GameManager>
 {
 	friend Singleton<GameManager>;
 
 	//	時間管理クラス
 	std::unique_ptr<DeltaTime> deltaTime;
+
+	// デバッグ用
+	std::unique_ptr<FieldScene> Field;
 
 public :
 
@@ -21,6 +27,5 @@ private:
 
 	void update();
 	void draw();
-
 };
 
