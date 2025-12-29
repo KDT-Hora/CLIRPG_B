@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="src\GameManager.h" />
     <ClInclude Include="src\Game\CharacterState.h" />
+    <ClInclude Include="src\Game\Enemy\Enemy.h" />
     <ClInclude Include="src\Game\Map\MapData.h" />
     <ClInclude Include="src\Game\Map\MapFactory.h" />
     <ClInclude Include="src\Game\Map\MapManager.h" />

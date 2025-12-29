@@ -53,12 +53,19 @@ public:
 	{
 	}
 
+	virtual ~Character() {}
+
 	const Status& GetState()const
 	{
 		return state;
 	}
 
 	bool IsLife() { return isLife; }
+
+	int Attack(Character& target) const
+	{
+		return state.STR;
+	}
 
 	void TakeDamage(int damage)
 	{
