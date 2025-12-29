@@ -1,7 +1,7 @@
 #include "FieldViewSystem.h"
 #include "../../../../Game/Map/MapData.h"
-#include "../../../../Game/Map/Player/MapPlayer.h"
-#include "../../../../Game/Map/Npc/MapNpc.h"
+#include "../../../../Game/Map/MapPlayer/MapPlayer.h"
+#include "../../../../Game/Map/MapEnemy/MapEnemy.h"
 
 //	•`‰æƒVƒXƒeƒ€
 #include "../../../View/View.h"
@@ -16,7 +16,7 @@ void FieldViewSystem::FieldDraw
 (
 	const MapData& m_Map,
 	const MapPlayer& m_Player,
-	const MapNpc& m_Npc
+	const MapEnemy& m_Npc
 ) const
 {
 

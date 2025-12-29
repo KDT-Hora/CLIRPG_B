@@ -1,8 +1,8 @@
 #include <iostream>
 
-#include "MapNpc.h"
+#include "MapEnemy.h"
 
-void MapNpc::SetPos(int px, int py)
+void MapEnemy::SetPos(int px, int py)
 {
 	// À•W‚ğ“ü‚ê‚é
 	x = px;

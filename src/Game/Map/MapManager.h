@@ -2,8 +2,8 @@
 #include <iostream>
 
 #include "MapData.h"
-#include "Player/MapPlayer.h"
-#include "Npc/MapNpc.h"
+#include "MapPlayer/MapPlayer.h"
+#include "MapEnemy/MapEnemy.h"
 
 // マップの管理クラス
 // 描画や生成をまとめて管理

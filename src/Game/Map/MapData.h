@@ -7,6 +7,9 @@
 #include <iostream>
 #include <algorithm>
 
+// フィールド内部データの管理
+// フィールド上にあるタイルの情報をデータで判定するようにする
+
 enum class TileType
 {
 	Floor = 0,
@@ -15,6 +18,7 @@ enum class TileType
 	StairUp = 3,
 	Chest = 4,
 	HealSpot = 5,
+	Enemy = 6,		// エネミータイルを追加（タイルを踏んだらエンゲージ）
 	StartPoint = 9,
 };
 
@@ -60,6 +64,9 @@ public:
 
 	// 範囲チェック関数
 	bool IsInBounds(int px, int py) const;
+
+	// 壁やフロア以外でイベントが起こるタイルを関数で定義
+	// フロアはNone、イベントはヒール、エネミー（API）
 
 	//	マップのサイズ取得
 	int GetWidth() const { return width; }
