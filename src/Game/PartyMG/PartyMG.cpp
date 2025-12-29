@@ -2,7 +2,7 @@
 
 #include "../CharacterState.h"
 
-void ParytMG::Init()
+void PartyMG::Init()
 {
 	//	念のためクリア
 	partyMembers.clear();
@@ -12,14 +12,27 @@ void ParytMG::Init()
 	Status sta1;
 	sta1.STR = 15;
 	sta1.VIT = 12;
-	partyMembers.push_back(std::make_shared<Character>("name",sta1));
+	partyMembers.push_back(std::make_shared<Character>("name",Faction::Player,sta1));
 
 
+	Status sta2;
+	sta2.INT = 15;
+	sta2.MND = 12;
+	partyMembers.push_back(std::make_shared<Character>("name2", Faction::Player, sta2));
 
+	Status sta3;
+	sta3.AGI = 15;
+	sta3.STR = 12;
+	partyMembers.push_back(std::make_shared<Character>("name3", Faction::Player, sta3));
+
+	Status sta4;
+	sta4.VIT = 15;
+	sta4.MND = 12;
+	partyMembers.push_back(std::make_shared<Character>("name4", Faction::Player, sta4));
 }
 
 //	メンバーを追加するメソッド
-void ParytMG::AddMember(std::shared_ptr<Character> charactor)
+void PartyMG::AddMember(std::shared_ptr<Character> charactor)
 {
 	//	引数で受け取ったメンバーを編成に追加
 
@@ -33,7 +46,7 @@ void ParytMG::AddMember(std::shared_ptr<Character> charactor)
 
 }
 
-const std::vector<std::shared_ptr<Character>>& ParytMG::GetParty() const
+const std::vector<std::shared_ptr<Character>>& PartyMG::GetParty() const
 {
 	// TODO: return ステートメントをここに挿入します
 	return partyMembers;

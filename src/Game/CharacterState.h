@@ -37,6 +37,13 @@ struct Status {
 
 };
 
+// キャラクターの陣営
+enum class Faction
+{
+	Player,
+	Enemy
+};
+
 class Character {
 
 protected:
@@ -46,14 +53,17 @@ protected:
 
 	bool isLife = true;
 
+	Faction faction;
 public:
+
+	Faction GetFaction()const { return faction; }
 
 	Character(std::string name, Status baseStatas)
 		:name(name), state(baseStatas) 
 	{
 	}
 
-	virtual ~Character() {}
+	~Character() {}
 
 	const Status& GetState()const
 	{
