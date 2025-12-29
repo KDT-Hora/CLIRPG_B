@@ -131,8 +131,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\BattleMG\BattleMG.cpp" />
     <ClCompile Include="src\CLS_RPG.cpp" />
     <ClCompile Include="src\GameManager.cpp" />
+    <ClCompile Include="src\Game\Enemy\EnemyData\EnemyDataBase.cpp" />
+    <ClCompile Include="src\Game\Enemy\EnemyFactory.cpp" />
     <ClCompile Include="src\Game\Map\MapData.cpp" />
     <ClCompile Include="src\Game\Map\MapFactory.cpp" />
     <ClCompile Include="src\Game\Map\MapManager.cpp" />
@@ -147,9 +150,12 @@
     <ClCompile Include="src\System\View\View.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\BattleMG\BattleMG.h" />
     <ClInclude Include="src\GameManager.h" />
     <ClInclude Include="src\Game\CharacterState.h" />
-    <ClInclude Include="src\Game\Enemy\Enemy.h" />
+    <ClInclude Include="src\Game\Enemy\EnemyData\EnemyData.h" />
+    <ClInclude Include="src\Game\Enemy\EnemyData\EnemyDatabase.h" />
+    <ClInclude Include="src\Game\Enemy\EnemyFactory.h" />
     <ClInclude Include="src\Game\Map\MapData.h" />
     <ClInclude Include="src\Game\Map\MapFactory.h" />
     <ClInclude Include="src\Game\Map\MapManager.h" />
