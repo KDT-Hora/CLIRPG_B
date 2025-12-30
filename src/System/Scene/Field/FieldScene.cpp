@@ -1,6 +1,7 @@
 #include "FieldScene.h"
 #include "../../Input/InputMG.h"
 #include "../../View/View.h"
+#include "../SceneMG.h"
 
 // コンストラクタ
 FieldScene::FieldScene()
@@ -174,6 +175,13 @@ void FieldScene::Update(double dt)
 	// 上記の処理を呼び出す
 	HandleMove();
 	HandleStairs();
+
+	//	デバッグ用シーン遷移処理
+	if (InputMG::Instance().ChechKey(InputMG::Key::ENTER))
+	{
+		SceneMG::Instance().SetChange(SceneType::Battle);
+	}
+
 }
 
 void FieldScene::DrawGuide()

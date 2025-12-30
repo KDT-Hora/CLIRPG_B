@@ -144,6 +144,7 @@
     <ClCompile Include="src\Game\Map\MapPlayer\MapPlayerCon.cpp" />
     <ClCompile Include="src\Game\PartyMG\PartyMG.cpp" />
     <ClCompile Include="src\Game\ShareData\PlayerShareData.cpp" />
+    <ClCompile Include="src\System\Scene\Battle\BattleScene.cpp" />
     <ClCompile Include="src\System\Scene\Field\FieldScene.cpp" />
     <ClCompile Include="src\System\Scene\Field\FieldView\FieldViewSystem.cpp" />
     <ClCompile Include="src\System\Scene\Result\BattleResult.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="src\Game\ShareData\PlayerShareData.h" />
     <ClInclude Include="src\singleton.h" />
     <ClInclude Include="src\System\Input\InputMG.h" />
+    <ClInclude Include="src\System\Scene\Battle\BattleScene.h" />
     <ClInclude Include="src\System\Scene\Field\FieldScene.h" />
     <ClInclude Include="src\System\Scene\Field\FieldView\FieldViewSystem.h" />
     <ClInclude Include="src\System\Scene\IScene.h" />
