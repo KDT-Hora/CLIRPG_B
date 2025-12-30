@@ -12,7 +12,7 @@ struct Status {
 	int MaxMP = 50;
 	int MP = MaxMP;
 
-	//	•W€’l@‚P‚O
+	//	â€¢WÂâ‚¬â€™lÂ@â€šPâ€šO
 	int STR = 10;
 	int INT = 10;
 	int VIT = 10;
@@ -37,7 +37,7 @@ struct Status {
 
 };
 
-// ƒLƒƒƒ‰ƒNƒ^[‚Ìw‰c
+// Æ’LÆ’Æ’Æ’â€°Æ’NÆ’^Â[â€šÃŒÂwâ€°c
 enum class Faction
 {
 	Player,
@@ -63,7 +63,7 @@ public:
 	{
 	}
 
-	~Character() {}
+	virtual ~Character() {}
 
 	const Status& GetState()const
 	{
