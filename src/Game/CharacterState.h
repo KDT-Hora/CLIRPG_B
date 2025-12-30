@@ -12,7 +12,7 @@ struct Status {
 	int MaxMP = 50;
 	int MP = MaxMP;
 
-	//	�W���l�@�P�O
+	//	•W€’l@‚P‚O
 	int STR = 10;
 	int INT = 10;
 	int VIT = 10;
@@ -37,6 +37,13 @@ struct Status {
 
 };
 
+// ƒLƒƒƒ‰ƒNƒ^[‚Ìw‰c
+enum class Faction
+{
+	Player,
+	Enemy
+};
+
 class Character {
 
 protected:
@@ -46,10 +53,13 @@ protected:
 
 	bool isLife = true;
 
+	Faction faction;
 public:
 
-	Character(std::string name, Status baseStatas)
-		:name(name), state(baseStatas) 
+	Faction GetFaction()const { return faction; }
+
+	Character(std::string name,Faction faction, Status baseStatas)
+		:name(name),faction(faction), state(baseStatas)
 	{
 	}
 

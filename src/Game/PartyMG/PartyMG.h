@@ -8,7 +8,7 @@
 
 class Character;
 
-class ParytMG
+class PartyMG
 {
 private:
 
