@@ -1,6 +1,6 @@
 #include "FieldScene.h"
 #include "../../Input/InputMG.h"
-
+#include "../../View/View.h"
 
 // コンストラクタ
 FieldScene::FieldScene()
@@ -176,6 +176,31 @@ void FieldScene::Update(double dt)
 	HandleStairs();
 }
 
+void FieldScene::DrawGuide()
+{
+	// 操作方法
+	View::Instance().Add("W / A / S / D : 移動");
+
+	// 座標を取得
+	int px = M_Player.GetX();
+	int py = M_Player.GetY();
+
+	// マップ情報を取得
+	const auto& Map_Data = Map_Manager.GetMapData();
+	// タイル情報を取得
+	TileType tile = static_cast<TileType>(Map_Data.GetTile(px, py));
+
+	// 階段タイル情報
+	View::Instance().Add("<< ：次のステージ | >>：前のステージ");
+	View::Instance().Add("&& : 敵");
+	
+	// 回復タイルを踏んでいるときだけ描画
+	if (Map_Data.IsHealTile(px, py)) 
+	{
+		View::Instance().Add("回復ポイント");
+	}
+}
+
 void FieldScene::Draw()
 {
 	// 描画の呼び出し
@@ -184,4 +209,7 @@ void FieldScene::Draw()
 		M_Player,
 		M_Npc
 	);
+
+	// ガイドの描画
+	this->DrawGuide();
 }

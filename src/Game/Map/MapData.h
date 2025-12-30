@@ -7,8 +7,8 @@
 #include <iostream>
 #include <algorithm>
 
-// ƒtƒB[ƒ‹ƒh“à•”ƒf[ƒ^‚ÌŠÇ—
-// ƒtƒB[ƒ‹ƒhã‚É‚ ‚éƒ^ƒCƒ‹‚Ìî•ñ‚ğƒf[ƒ^‚Å”»’è‚·‚é‚æ‚¤‚É‚·‚é
+// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰å†…éƒ¨ãƒ‡ãƒ¼ã‚¿ã®ç®¡ç†
+// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ä¸Šã«ã‚ã‚‹ã‚¿ã‚¤ãƒ«ã®æƒ…å ±ã‚’ãƒ‡ãƒ¼ã‚¿ã§åˆ¤å®šã™ã‚‹ã‚ˆã†ã«ã™ã‚‹
 
 enum class TileType
 {
@@ -18,7 +18,7 @@ enum class TileType
 	StairUp = 3,
 	Chest = 4,
 	HealSpot = 5,
-	Enemy = 6,		// ƒGƒlƒ~[ƒ^ƒCƒ‹‚ğ’Ç‰Áiƒ^ƒCƒ‹‚ğ“¥‚ñ‚¾‚çƒGƒ“ƒQ[ƒWj
+	Enemy = 6,		// ã‚¨ãƒãƒŸãƒ¼ã‚¿ã‚¤ãƒ«ã‚’è¿½åŠ ï¼ˆã‚¿ã‚¤ãƒ«ã‚’è¸ã‚“ã ã‚‰ã‚¨ãƒ³ã‚²ãƒ¼ã‚¸ï¼‰
 	StartPoint = 9,
 };
 
@@ -26,59 +26,64 @@ class MapData
 {
 private:
 
-	// À•W
+	// åº§æ¨™
 	int width = 0;
 	int height = 0;
 
-	// ƒ}ƒbƒv‚ÌÀƒf[ƒ^i•Ç‚â°‚Ìí—Şj
+	// ãƒãƒƒãƒ—ã®å®Ÿãƒ‡ãƒ¼ã‚¿ï¼ˆå£ã‚„åºŠã®ç¨®é¡ï¼‰
 	std::vector<std::vector<int>> grid;
 
-	// ‹ŠEŠÇ—ƒf[ƒ^itrue: ’TõÏ‚İ/Œ©‚¦‚é, false: –¢’Tõ/ˆÃˆÅj
+	// è¦–ç•Œç®¡ç†ãƒ‡ãƒ¼ã‚¿ï¼ˆtrue: æ¢ç´¢æ¸ˆã¿/è¦‹ãˆã‚‹, false: æœªæ¢ç´¢/æš—é—‡ï¼‰
 	std::vector<std::vector<bool>> explored;
 
 public:
 
-	// ˆø”ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	// å¼•æ•°ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	MapData(int w, int h, const int* tiles)
 	{
 		Init(w, h, tiles);
 	}
 
-	// ƒfƒXƒgƒ‰ƒNƒ^
+	// ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	virtual ~MapData() = default;
 
-	//	‰Šú‰»
+	//	åˆæœŸåŒ–
 	void Init(int w, int h, const int* data);
 
-	//	‹ŠE‚ÌXV
+	//	è¦–ç•Œã®æ›´æ–°
 	void UpdateExploredArea(int px, int py);
 
-	// ƒ^ƒCƒ‹‚ªŒ©‚¦‚é‚©‚Ç‚¤‚©‚ÌŠÖ”
+	// ã‚¿ã‚¤ãƒ«ãŒè¦‹ãˆã‚‹ã‹ã©ã†ã‹ã®é–¢æ•°
 	bool IsExplored(int px, int py) const;
 
-	// ˆÚ“®‚Å‚«‚é‚©‚Å‚«‚È‚¢‚©‚Ì”»’è—pŠÖ”
+	// ç§»å‹•ã§ãã‚‹ã‹ã§ããªã„ã‹ã®åˆ¤å®šç”¨é–¢æ•°
 	bool CanMove(int px, int py) const;
 
-	//	w’èƒ^ƒCƒ‹‚Ìî•ñ‚ğæ“¾
+	//	æŒ‡å®šã‚¿ã‚¤ãƒ«ã®æƒ…å ±ã‚’å–å¾—
 	int GetTile(int px, int py) const;
 
-	// ”ÍˆÍƒ`ƒFƒbƒNŠÖ”
+	// ç¯„å›²ãƒã‚§ãƒƒã‚¯é–¢æ•°
 	bool IsInBounds(int px, int py) const;
 
-	// •Ç‚âƒtƒƒAˆÈŠO‚ÅƒCƒxƒ“ƒg‚ª‹N‚±‚éƒ^ƒCƒ‹‚ğŠÖ”‚Å’è‹`
-	// ƒtƒƒA‚ÍNoneAƒCƒxƒ“ƒg‚Íƒq[ƒ‹AƒGƒlƒ~[iAPIj
+	// å£ã‚„ãƒ•ãƒ­ã‚¢ä»¥å¤–ã§ã‚¤ãƒ™ãƒ³ãƒˆãŒèµ·ã“ã‚‹ã‚¿ã‚¤ãƒ«ã‚’é–¢æ•°ã§å®šç¾©
+	// ãƒ•ãƒ­ã‚¢ã¯Noneã€ã‚¤ãƒ™ãƒ³ãƒˆã¯ãƒ’ãƒ¼ãƒ«ã€ã‚¨ãƒãƒŸãƒ¼ï¼ˆAPIï¼‰
+	// ã‚¿ã‚¤ãƒ«ç®¡ç†é–¢æ•°
+	bool IsHealTile(int x, int y)const;
+	bool IsEnemyTile(int x, int y)const;
+	bool IsStairUpTile(int x, int y)const;
+	bool IsStairDownTile(int x, int y)const;
 
-	//	ƒ}ƒbƒv‚ÌƒTƒCƒYæ“¾
+	//	ãƒãƒƒãƒ—ã®ã‚µã‚¤ã‚ºå–å¾—
 	int GetWidth() const { return width; }
 	int GetHeight() const { return height; }
 
-	//	ƒXƒ^[ƒg’n“_‚ÌÀ•W‚ğæ“¾
-	//	QÆ‚Å•Ô‚·
-	//@À•W‚ğ\‘¢‘Ì‚Å‚Á‚Ä‚¢‚È‚¢‚Ì‚Å‚±‚ÌŒ`
-	//	\‘¢‘Ì‚Å‚Â‚æ‚¤‚É‚·‚é‚È‚ç—v•ÏX
+	//	ã‚¹ã‚¿ãƒ¼ãƒˆåœ°ç‚¹ã®åº§æ¨™ã‚’å–å¾—
+	//	å‚ç…§ã§è¿”ã™
+	//ã€€åº§æ¨™ã‚’æ§‹é€ ä½“ã§æŒã£ã¦ã„ãªã„ã®ã§ã“ã®å½¢
+	//	æ§‹é€ ä½“ã§æŒã¤ã‚ˆã†ã«ã™ã‚‹ãªã‚‰è¦å¤‰æ›´
 	bool GetStartPos(int& arg_x, int& arg_y) const;
 
-	// ƒXƒe[ƒW‚ğˆÚ“®‚µ‚½Û‚ÌƒvƒŒƒCƒ„[‚ÌÀ•WŠÇ—ŠÖ”
+	// ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’ç§»å‹•ã—ãŸéš›ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®åº§æ¨™ç®¡ç†é–¢æ•°
 	bool GetStairUpPos(int& arg_x, int& arg_y) const;
 	bool GetStairDownPos(int& arg_x, int& arg_y) const;
 };

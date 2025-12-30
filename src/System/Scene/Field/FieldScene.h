@@ -9,74 +9,77 @@
 #include "FieldView/FieldViewSystem.h"
 #include "../IScene.h"
 
-// ƒtƒB[ƒ‹ƒhƒNƒ‰ƒX
-// ƒvƒŒƒCƒ„[‚ÌƒtƒB[ƒ‹ƒhŠÔ‚Ìƒ^ƒCƒ‹ˆÚ“®‚âƒXƒe[ƒW‚ÌXV‚ðs‚¤
+// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‚¯ãƒ©ã‚¹
+// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰é–“ã®ã‚¿ã‚¤ãƒ«ç§»å‹•ã‚„ã‚¹ãƒ†ãƒ¼ã‚¸ã®æ›´æ–°ã‚’è¡Œã†
 
-// ‰ñ•œƒCƒxƒ“ƒg’Ç‰Á
-// ƒvƒŒƒCƒ„[‚ÌÀ•W‚ªƒq[ƒ‹ƒ^ƒCƒ‹‚Ìã‚ð’Ê‚Á‚½Žž‚ÉHP‚ðƒvƒŒƒCƒ„[‚ÌHP‚ÆMP‚ð‰ñ•œ
-// ƒvƒŒƒCƒ„[ˆÚ“®Œã‚ÉŒ»Ý‚Ìƒ^ƒCƒ‹‚ðƒ`ƒFƒbƒN‚³‚¹‚é
+// å›žå¾©ã‚¤ãƒ™ãƒ³ãƒˆè¿½åŠ 
+// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®åº§æ¨™ãŒãƒ’ãƒ¼ãƒ«ã‚¿ã‚¤ãƒ«ã®ä¸Šã‚’é€šã£ãŸæ™‚ã«HPã‚’ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®HPã¨MPã‚’å›žå¾©
+// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ç§»å‹•å¾Œã«ç¾åœ¨ã®ã‚¿ã‚¤ãƒ«ã‚’ãƒã‚§ãƒƒã‚¯ã•ã›ã‚‹
 
-// Õ“Ë”»’è‚Ì’Ç‰Á
-// ƒGƒlƒ~[ƒ^ƒCƒ‹‚ðƒvƒŒƒCƒ„[‚ª’Ê‚Á‚½Û‚ÉƒV[ƒ“‚ðƒoƒgƒ‹‚É•ÏX‚·‚é
+// è¡çªåˆ¤å®šã®è¿½åŠ 
+// ã‚¨ãƒãƒŸãƒ¼ã‚¿ã‚¤ãƒ«ã‚’ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒé€šã£ãŸéš›ã«ã‚·ãƒ¼ãƒ³ã‚’ãƒãƒˆãƒ«ã«å¤‰æ›´ã™ã‚‹
 
-// ‘JˆÚ•ûŒü
+// é·ç§»æ–¹å‘
 enum class StageMoveDir
 {
-	None, // ‚È‚µ
-	Up,	  // ã
-	Down, // ‰º
+	None, // ãªã—
+	Up,	  // ä¸Š
+	Down, // ä¸‹
 };
 
 class FieldScene : public IScene
 {
 private:
 
-	// ƒ}ƒbƒvƒ}ƒl[ƒWƒƒ[ƒNƒ‰ƒX
+	// ãƒžãƒƒãƒ—ãƒžãƒãƒ¼ã‚¸ãƒ£ãƒ¼ã‚¯ãƒ©ã‚¹
 	MapManager Map_Manager;
-	// ƒvƒŒƒCƒ„[ƒNƒ‰ƒX
+	// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚¯ãƒ©ã‚¹
 	MapPlayer M_Player;
-	// ƒvƒŒƒCƒ„[ƒRƒ“ƒgƒ[ƒ‰[
+	// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ãƒ¼
 	MapPlayerController Player_Ctrl;
-	// NPCƒNƒ‰ƒX
+	// NPCã‚¯ãƒ©ã‚¹
 	MapEnemy M_Npc;
 
-	// ‰æ–Ê‘JˆÚ
+	// ç”»é¢é·ç§»
 	StageMoveDir move_dir = StageMoveDir::None;
-	// ƒtƒB[ƒ‹ƒh•`‰æŠÇ—ƒNƒ‰ƒX‚ðŒÄ‚Ño‚·
+	// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰æç”»ç®¡ç†ã‚¯ãƒ©ã‚¹ã‚’å‘¼ã³å‡ºã™
 	std::unique_ptr<FieldViewSystem> FieldViewPtr = std::make_unique<FieldViewSystem>();
 
-	// Œ»Ý‚ÌƒXƒe[ƒW
+	// ç¾åœ¨ã®ã‚¹ãƒ†ãƒ¼ã‚¸
 	int current_stage = 1;
 
-	// ƒ^ƒCƒ‹ˆÚ“®ˆ—ŠÖ”
+	// ã‚¿ã‚¤ãƒ«ç§»å‹•å‡¦ç†é–¢æ•°
 	void HandleMove();
-	// ƒXƒe[ƒWˆÚ“®ˆ—ŠÖ”
+	// ã‚¹ãƒ†ãƒ¼ã‚¸ç§»å‹•å‡¦ç†é–¢æ•°
 	void HandleStairs();
-	// ƒIƒuƒWƒFƒNƒg‚Ì‰Šú‰»Ý’è—pŠÖ”
+	// ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®åˆæœŸåŒ–è¨­å®šç”¨é–¢æ•°
 	void SetupStageObjects();
 
-	// ƒq[ƒ‹ƒ^ƒCƒ‹‚ÌƒCƒxƒ“ƒg—pŠÖ”‚Ì’Ç‰Á
-	// ƒq[ƒ‹ƒ^ƒCƒ‹‚ÉƒvƒŒƒCƒ„[‚ª’Ê‚Á‚½Žž‚Éˆ—‚ðŽÀs
-	// ƒvƒŒƒCƒ„[‚ÌƒXƒe[ƒ^ƒX‚ÌHP‚ð‘‚â‚·
+	// ãƒ’ãƒ¼ãƒ«ã‚¿ã‚¤ãƒ«ã®ã‚¤ãƒ™ãƒ³ãƒˆç”¨é–¢æ•°ã®è¿½åŠ 
+	// ãƒ’ãƒ¼ãƒ«ã‚¿ã‚¤ãƒ«ã«ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒé€šã£ãŸæ™‚ã«å‡¦ç†ã‚’å®Ÿè¡Œ
+	// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã®HPã‚’å¢—ã‚„ã™
 
-	// ƒGƒlƒ~[ƒ^ƒCƒ‹‚ÌƒCƒxƒ“ƒg—pŠÖ”‚Ì’Ç‰Á
-	// ƒGƒlƒ~[ƒ^ƒCƒ‹‚ÉƒvƒŒƒCƒ„[‚ª’Ê‚Á‚½Žž‚Éˆ—‚ðŽÀs
-	// ƒV[ƒ“ƒ}ƒl[ƒWƒƒ[‚©‚çƒV[ƒ“‚ðƒoƒgƒ‹‚ÉˆÚs
-	// í“¬ŠJŽnƒtƒ‰ƒO‚ðì¬‚·‚é
+	// ã‚¨ãƒãƒŸãƒ¼ã‚¿ã‚¤ãƒ«ã®ã‚¤ãƒ™ãƒ³ãƒˆç”¨é–¢æ•°ã®è¿½åŠ 
+	// ã‚¨ãƒãƒŸãƒ¼ã‚¿ã‚¤ãƒ«ã«ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒé€šã£ãŸæ™‚ã«å‡¦ç†ã‚’å®Ÿè¡Œ
+	// ã‚·ãƒ¼ãƒ³ãƒžãƒãƒ¼ã‚¸ãƒ£ãƒ¼ã‹ã‚‰ã‚·ãƒ¼ãƒ³ã‚’ãƒãƒˆãƒ«ã«ç§»è¡Œ
+	// æˆ¦é—˜é–‹å§‹ãƒ•ãƒ©ã‚°ã‚’ä½œæˆã™ã‚‹
 
-	// ƒoƒgƒ‹ƒV[ƒ“I—¹Œã‚ÌØ‚è‘Ö‚¦Žž‚Éˆ——pŠÖ”
+	// ãƒãƒˆãƒ«ã‚·ãƒ¼ãƒ³çµ‚äº†å¾Œã®åˆ‡ã‚Šæ›¿ãˆæ™‚ã«å‡¦ç†ç”¨é–¢æ•°
+
+	// ã‚¬ã‚¤ãƒ‰æç”»ç”¨é–¢æ•°
+	void DrawGuide();
 
 public:
 
-	// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	FieldScene();
-	// ƒfƒXƒgƒ‰ƒNƒ^
+	// ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	virtual ~FieldScene() override = default;
 
-	// ‰Šú‰»ˆ—
+	// åˆæœŸåŒ–å‡¦ç†
 	void Init(int start_stage);
-	// XVˆ—
+	// æ›´æ–°å‡¦ç†
 	void Update(double dt) override;
-	// •`‰æˆ—
+	// æç”»å‡¦ç†
 	void Draw() override;
 };

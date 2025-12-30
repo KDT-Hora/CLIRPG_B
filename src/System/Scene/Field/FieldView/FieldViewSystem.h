@@ -19,7 +19,7 @@ private:
 
 public:
 
-	~FieldViewSystem();
+	virtual ~FieldViewSystem();
 
 	// ‚Pƒ^ƒCƒ‹‚Ì•`‰æ”
 	static constexpr int TILE_VIEW_WIDTH = 3;

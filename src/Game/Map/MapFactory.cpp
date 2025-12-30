@@ -58,7 +58,7 @@ namespace
 	}
 
 	// 1階
-	static const std::array<int, MAP_SIZE> BuildStage1()
+	static const std::array<int, MAP_SIZE> BuildFirstStage()
 	{
 		// タイルの配置
 		auto d = BuildBase();
@@ -87,7 +87,7 @@ namespace
 	}
 
 	// 実体
-	static const auto FIRST_STAGE = BuildStage1();
+	static const auto FIRST_STAGE = BuildFirstStage();
 	static const auto MID_STAGE = BuildMiddleStage();
 	static const auto LAST_STAGE = BuildLastStage();
 
