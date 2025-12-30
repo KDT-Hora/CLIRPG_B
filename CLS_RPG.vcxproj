@@ -155,6 +155,7 @@
     <ClInclude Include="src\BattleMG\BattleMG.h" />
     <ClInclude Include="src\GameManager.h" />
     <ClInclude Include="src\Game\CharacterState.h" />
+    <ClInclude Include="src\Game\Enemy\Enemy.h" />
     <ClInclude Include="src\Game\Enemy\EnemyData\EnemyData.h" />
     <ClInclude Include="src\Game\Enemy\EnemyData\EnemyDatabase.h" />
     <ClInclude Include="src\Game\Enemy\EnemyFactory.h" />
