@@ -3,6 +3,7 @@
 //	シーンの読み込み
 #include "Title/Title.h"
 #include "Field/FieldScene.h"
+#include "Battle/BattleScene.h"
 
 void SceneMG::Init()
 {
@@ -44,7 +45,7 @@ void SceneMG::changeExcute()
 		break;
 
 	case SceneType::Battle:
-		currentScene = std::make_unique<TitleScene>();
+		currentScene = std::make_unique<BattleScene>();
 		break;
 
 	case SceneType::Result:
