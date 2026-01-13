@@ -2,11 +2,20 @@
 #include "../../Input/InputMG.h"
 #include "../../View/View.h"
 #include "../SceneMG.h"
+#include "../../../Game/ShareData/FieldShareData.h"
 
 // コンストラクタ
 FieldScene::FieldScene()
 {
-	Init(1);
+	auto stage = FieldShareData::Instance().GetCurrentStage();
+	Init(stage);
+}
+
+FieldScene::~FieldScene()
+{
+	FieldShareData::Instance().SetCurrentStage(current_stage);
+	FieldShareData::Instance().SetPlayerX(M_Player.GetX());
+	FieldShareData::Instance().SetPlayerY(M_Player.GetY());
 }
 
 void FieldScene::SetupStageObjects()

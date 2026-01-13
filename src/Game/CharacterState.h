@@ -12,7 +12,6 @@ struct Status {
 	int MaxMP = 50;
 	int MP = MaxMP;
 
-	//	•W€’l@‚P‚O
 	int STR = 10;
 	int INT = 10;
 	int VIT = 10;
@@ -37,7 +36,6 @@ struct Status {
 
 };
 
-// ƒLƒƒƒ‰ƒNƒ^[‚Ìw‰c
 enum class Faction
 {
 	Player,
@@ -64,6 +62,16 @@ public:
 	}
 
 	virtual ~Character() {}
+
+	const std::string& GetName()const
+	{
+		return name;
+	}
+
+	const int GetHP()const
+	{
+		return state.HP;
+	}
 
 	const Status& GetState()const
 	{

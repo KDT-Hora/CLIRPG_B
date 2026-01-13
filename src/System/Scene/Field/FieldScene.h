@@ -74,7 +74,7 @@ public:
 	// コンストラクタ
 	FieldScene();
 	// デストラクタ
-	virtual ~FieldScene() override = default;
+	virtual ~FieldScene() override;
 
 	// 初期化処理
 	void Init(int start_stage);
